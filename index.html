@@ -212,7 +212,1494 @@ o	servizi di dati territoriali armonizzato.</p>
   </figure>
 <p>Maggiori approfondimenti su detti servizi sono rinvenibili nella guida tecnica INSPIRE citata innanzi.</p>
       
-      <table class="simple" width="98%" cellpadding="7" cellspacing="0">
+      <section>
+        <h2><dfn>bar</dfn> attribute</h2>
+        <p>When getting, the <a>bar</a> attribute returns you a 🍹.</p>
+      </section>
+      <section>
+        <h2><dfn>doTheFoo(DOMString thing)</dfn> method</h2>
+        <p>When called, <code>doTheFoo(<var>thing</var>)</code> it MUST behave as follows:</p>
+        <ol class="algorithm">
+          <li>If <var>thing</var>....</li>
+          <li>Let <var>someProp</var>... of the [[!ISO-19115]] spec.</li>
+        </ol>
+      </section>
+    </section>
+   <section id="term">
+    <h2>Terminologia</h2>
+	   <section>
+        <h3>Termini e definizioni</h3>
+      <p>
+        Ai fini del presente documento, oltre alle definizioni pertinenti di cui all’art. 1 del [D.Lgs. 82/2005], si applicano le seguenti definizioni:
+</p>
+	   <p><strong>amministrazione titolare del dato</strong>: la pubblica amministrazione, di cui all’articolo 1, comma 2, del decreto legislativo n. 165 del 2001, che produce e detiene il dato originale, ovvero la versione di riferimento da cui derivano eventuali copie e che ne può disporre liberamente;</p>
+           <p><strong>classe</strong>: insieme di oggetti simili dotati di proprietà comuni;</p>
+	   <p><strong>dataset</strong>: collezione identificabile di dati;</p>
+	   <p><strong>dati territoriali di interesse generale</strong>: i dati territoriali individuati come dati di interesse generale per le finalità di pubblicazione nel Repertorio, previste dell’articolo 59, comma 3, del decreto legislativo 7 marzo 2005, n. 82 e riportati nell’allegato 1, che costituisce parte integrante del presente documento;</p>
+	   <p><strong>direttiva INSPIRE</strong>: la direttiva 2007/2/CE del Parlamento europeo e del Consiglio del 14 marzo 2007, che istituisce un’infrastruttura per l’informazione territoriale nella Comunità europea, recepita in Italia con il decreto legislativo 27 gennaio 2010, n. 32;</p>
+           <p><strong>dizionario dei dati</strong>: enumerazione informale in linguaggio corrente delle descrizioni degli oggetti;</p>
+	   <p><strong>enumerazione</strong>: elenco bloccato di valori;</p>
+	   <p><strong>lista di valori</strong>: elenco non bloccato di valori. Può essere considerata una enumerazione flessibile;</p>
+	   <p><strong>metadati</strong>: informazioni che descrivono i dati territoriali e i servizi ad essi relativi e che consentono di registrare, ricercare e utilizzare tali dati e servizi;</p>
+	   <p><strong>Repertorio</strong>: il Repertorio nazionale dei dati territoriali istituito presso l’Agenzia per l’Italia Digitale, ai sensi dell’articolo 59, comma 3, del decreto legislativo 7 marzo 2005, n. 82, raggiungibile al dominio https://geodati.gov.it;</p>
+	   <p><strong>schema</strong>: descrizione di un modello attraverso un linguaggio formale;</p>
+	   <p><strong>schema XML</strong>: modalità per definire la struttura, il contenuto e la semantica dei documenti XML [ISO 19139];</p>
+	   <p><strong>serie di dataset</strong>: collezione di dataset che condividono le stesse specifiche di prodotto;</p>
+	   <p><strong>servizi di ricerca</strong>: servizi che consentono di cercare i set di dati territoriali e i servizi ad essi relativi in base al contenuto dei metadati corrispondenti e di visualizzare il contenuto dei metadati;</p>
+	   <p><strong>servizi relativi ai dati territoriali</strong>: le operazioni che possono essere eseguite, con un’applicazione informatica, sui dati territoriali o sui metadati connessi;</p>
+	   <p><strong>servizio di dati armonizzati</strong>: un servizio di dati territoriali interoperabile che soddisfa le prescrizioni di cui all’allegato VII del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014];</p>
+	   <p><strong>servizio di dati invocabili</strong>: un servizio di dati territoriali: a) i cui metadati soddisfano le prescrizioni del regolamento (CE) n. 1205/2008 della Commissione; b) di cui almeno un localizzatore della risorsa è un punto di accesso; c) che sia conforme ad un insieme di specifiche tecniche documentate e accessibili al pubblico che forniscono le informazioni necessarie per la sua esecuzione [Regolamento (UE) n. 1312/2014];</p>
+	   <p><strong>servizio di dati interoperabili</strong>: un servizio di dati territoriali richiamabili che soddisfa le prescrizioni di cui all’allegato VI del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014].</p>
+	  </section>
+	   <section>
+        <h3>Acronimi</h3>
+		   <p><strong>AgID</strong>	Agenzia per l’Italia Digitale</p>
+<p><strong>CAD</strong>	Codice Amministrazione Digitale, D. Lgs. 7 marzo 2005, n. 82</p>
+<p><strong>IPA</strong>	Indice dei domicili digitali delle pubbliche amministrazioni e dei gestori di pubblici servizi</p>
+<p><strong>PA</strong>	Pubblica Amministrazione</p>
+<p><strong>UML</strong>	Unified Modeling Language</p>
+<p><strong>URI</strong>	Uniform Resource Identifier</p>
+<p><strong>XML</strong>	Extensible Markup Language</p>
+
+	  </section>
+	  </section>
+	  
+	  <section id="princ">
+		  <h2>Principi generali</h2>
+		  <section>
+			<h3>Funzioni del Repertorio</h3>
+			  <p>Il Repertorio di cui all’articolo 59, comma 3, del [D.Lgs. 82/2005], costituisce il catalogo nazionale dei metadati riguardanti i dati territoriali ed i servizi ad essi relativi, disponibili presso le pubbliche amministrazioni.</p>
+<p>Il Repertorio eroga i servizi di ricerca di cui all’articolo 7, comma 1, lettera a) del [D.Lgs. 32/2010], e rappresenta il punto di accesso nazionale ai fini dell’alimentazione del geoportale di cui all’art. 15, comma 1 della direttiva INSPIRE.</p>
+<p>I metadati resi disponibili attraverso il servizio di ricerca erogato dal Repertorio costituiscono la base informativa per il calcolo degli indicatori per il monitoraggio di cui alla Decisione 2009/442/CE della Commissione del 5 giugno 2009 recante attuazione della direttiva INSPIRE per quanto riguarda il monitoraggio e la rendicontazione.</p>
+<p>Il Repertorio costituisce parte integrante dell’infrastruttura nazionale per l’informazione territoriale e del monitoraggio ambientale di cui all’articolo 3, comma 1, del [D.Lgs. 32/2010], relativamente alla raccolta dei metadati per i dati territoriali ed i relativi servizi.</p>
+
+		  </section>
+		  <section>
+			<h3>Contenuto del Repertorio</h3>
+			  <p>Il Repertorio contiene i metadati dei dati territoriali di interesse generale elencati nell’allegato 1 e dei relativi servizi.</p>
+<p>Il Repertorio contiene altresì i metadati relativi ai dati e servizi territoriali che l’amministrazione titolare degli stessi reputi opportuno documentare.</p>
+		  </section>
+		  <section>
+			<h3>Efficacia della pubblicazione nel Repertorio</h3>
+			  <p>La pubblicazione dei metadati nel Repertorio certifica l’esistenza del relativo dato e assicura il rispetto degli adempimenti e la conformità alla direttiva INSPIRE, ai Regolamenti [CE 1205/2008] e [UE 1089/2010], relativamente ai metadati per l’interoperabilità (ex art. 13) e ai metadati per i servizi di dati territoriali di cui agli allegati V, VI e VII, della Commissione e al [D.Lgs. 32/2010].</p>
+<p>L’amministrazione titolare dei dati territoriali resta responsabile della correttezza, della tenuta, della gestione e dell’aggiornamento dei dati medesimi. È altresì responsabile della correttezza e dell’aggiornamento dei relativi metadati pubblicati nel Repertorio.</p>
+
+		  </section>
+		   <section>
+			<h3>Creazione e aggiornamento dei metadati</h3>
+			  <p>Le amministrazioni DEVONO alimentare e aggiornare il Repertorio in conformità alle specifiche tecniche definite con questo documento di linee guida.</p>
+<p>Entro tre mesi dall’acquisizione di nuovi dati territoriali di interesse generale o dall’aggiornamento di dati esistenti, e servizi ad essi relativi, le amministrazioni titolari DEVONO provvedere alla pubblicazione dei relativi metadati nel Repertorio.</p>
+<p>Le amministrazioni POSSONO, altresì, inserire nel Repertorio i metadati relativi ai dati territoriali ed eventuali servizi che intendono acquisire e sviluppare e, quindi, non ancora disponibili.</p>
+<p>Previa comunicazione all’Agenzia per l’Italia Digitale e ferma restando la responsabilità diretta dell’amministrazione titolare, per tutte le attività di alimentazione e aggiornamento del Repertorio, le amministrazioni titolari dei dati, e dei relativi servizi, POSSONO avvalersi di altra pubblica amministrazione ovvero di altro soggetto individuato ai sensi della normativa vigente.</p> 
+		  </section>
+		  <section>
+			<h3>Gestione del Repertorio</h3>
+			  <p>L’Agenzia per l’Italia Digitale cura la progettazione, la realizzazione, lo sviluppo e la gestione organizzativa e tecnologica del Repertorio nell’ambito delle infrastrutture condivise nazionali SPC.</p>
+<p>Il servizio di ricerca erogato dal Repertorio è conforme ai requisiti e alle caratteristiche specifiche di cui all’allegato II del Regolamento [CE 976/2009].</p>
+<p>Per tutte le attività di realizzazione e gestione del Repertorio, AgID può avvalersi di soggetti terzi.</p>
+<p>Agli oneri finanziari per la gestione del Repertorio si provvede ai sensi dell’articolo 59, comma 7, del [D.Lgs. 82/2005].</p> 
+		  </section>
+		  <section>
+			<h3>Accesso al Repertorio</h3>
+			  <p>L’accesso al Repertorio per la consultazione dei metadati è pubblico e gratuito.</p>
+<p>Ai fini dell’alimentazione del Repertorio, l’accesso all’area dedicata alla gestione dei metadati è riservato alle amministrazioni titolari di dati e servizi previo accreditamento da effettuarsi secondo le modalità descritte nel Capitolo 4.</p>
+		  </section>
+		  <section>
+			<h3>Pianificazione</h3>
+			  <p>I metadati contenuti nel Repertorio costituiscono la base informativa attraverso la quale le amministrazioni possono verificare l’eventuale esistenza di esigenze comuni o analoghe e pianificare l’attività di acquisizione dei dati in maniera congiunta, con l’obiettivo di minimizzare i costi sostenuti dalle singole Amministrazioni, informandone AgID.</p>
+		  </section>
+		  <section>
+			<h3>Coordinamento con il portale nazionale dei dati aperti</h3>
+			  <p>Anche nel caso di dati territoriali di tipo aperto, i relativi metadati DEVONO essere documentati esclusivamente nel Repertorio secondo le regole definite nelle presenti linee guida. </p>
+<p>Il Repertorio garantisce l’accesso ai dati territoriali di tipo aperto rendendo disponibile i relativi metadati, secondo gli standard di riferimento, anche nel portale nazionale dei dati aperti di cui all’art. 9 del decreto legislativo n. 36 del 2006 come modificato dal decreto legislativo 8 maggio 2015, n. 102.</p>
+<p>AgID adotta pertinenti linee guida operative per disciplinare le modalità per il coordinamento e l’integrazione dei due cataloghi.
+</p>
+		  </section>
+		  <section>
+			<h3>Guide operative</h3>
+			  <p>Per l’attuazione di quanto indicato nelle presenti linee guida, AgID adotta guide operative per fornire alle amministrazioni indicazioni e istruzioni dettagliate per l’implementazione delle regole tecniche contenute in questo documento di linee guida.</p>
+<p>Dette guide operative sono pubblicate sul sito istituzionale del Repertorio.
+</p>
+		  </section>
+	  </section>
+	  
+	  <section id="req">
+		  <h2>Requisiti</h2>
+		  <section>
+			  <h3>Contenuto del Repertorio</h3>
+			  <p>Ai fini del presente documento, sono individuati:</p>
+			  <ul>
+				  <li>l’insieme minimo di metadati comune a tutte le tipologie di dati territoriali;</li>
+				  <li>i metadati supplementari opzionali per alcune categorie tematiche;</li>
+				  <li>il set di metadati necessario per documentare i servizi;</li>
+				  <li>il set opzionale di metadati per documentare le nuove acquisizioni ovvero i dati territoriali che una Pubblica Amministrazione prevede di acquisire.</li>
+			  </ul>
+				<section>
+					<h4>Metadati per i dati territoriali</h4>
+					<p>In questo paragrafo sono definiti i metadati che DEVONO essere utilizzati per descrivere i dati territoriali nel Repertorio. Tali metadati sono coerenti con quanto disposto dai Regolamenti [CE 1205/2008] e [UE 1089/2010].</p>
+<p>Nel “Dizionario dei metadati relativi ai dati territoriali” (paragrafo 4.2.2), per ogni metadato, è specificata la definizione, il corrispondente elemento ISO, il tipo, il dominio, il livello di obbligatorietà e la molteplicità.</p>
+<p>Al paragrafo 4.1.1.1 sono individuati i metadati che DEVONO essere applicati a tutte le tipologie di dati territoriali. </p>
+<p>Al paragrafo 4.1.1.2 sono individuati i metadati supplementari opzionali che le amministrazioni POSSONO utilizzare per alcune specifiche categorie tematiche.</p>
+					<section>
+						<h5>Metadati comuni a tutte le tipologie di dati territoriali</h5>
+						<table class="simple">
+	
+		<tr>
+			<th colspan="4">Informazioni sui metadati</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Identificatore del file</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Lingua dei metadati</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Set dei caratteri dei metadati</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Id file precedente</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Livello gerarchico</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="5">6</td>
+			<td rowspan="5">Responsabile dei metadati</td>
+			<td colspan="2">6.1 - Nome dell&rsquo;Ente</td>
+		</tr>
+		<tr>
+			<td colspan="2">6.2 &ndash; Ruolo</td>
+		</tr>
+		<tr>
+			<td rowspan="3">6.3 - Informazioni per contattare l&rsquo;Ente</td>
+			<td>6.3.1 - Sito web</td>
+		</tr>
+		<tr>
+			<td>6.3.2 - Telefono</td>
+		</tr>
+		<tr>
+			<td>6.3.3 - E-mail</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>Data dei metadati</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Nome dello Standard</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>Versione dello Standard</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4">Identificazione dei dati</th>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>Titolo</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">11</td>
+			<td rowspan="2">Data</td>
+			<td colspan="2">11.1 &ndash; Data</td>
+		</tr>
+		<tr>
+			<td colspan="2">11.2 - Tipo data</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>Formato di presentazione</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="5">13</td>
+			<td rowspan="5">Responsabile</td>
+			<td colspan="2">13.1 - Nome dell&rsquo;Ente</td>
+		</tr>
+		<tr>
+			<td colspan="2">13.2 &ndash; Ruolo</td>
+		</tr>
+		<tr>
+			<td rowspan="3">13.3 - Informazioni per contattare l&rsquo;Ente</td>
+			<td>13.3.1 - Sito web</td>
+		</tr>
+		<tr>
+			<td>13.3.2 - Telefono</td>
+		</tr>
+		<tr>
+			<td>13.3.3 - E-mail</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>Identificatore</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>Id livello superiore</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>Altri dettagli</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>Descrizione</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">18</td>
+			<td rowspan="2">Parole chiave</td>
+			<td colspan="2">18.1 - Parola chiave</td>
+		</tr>
+		<tr>
+			<td colspan="2">18.2 &ndash; Thesaurus</td>
+		</tr>
+		<tr>
+			<td rowspan="5">19</td>
+			<td rowspan="5">Punto di contatto</td>
+			<td colspan="2">19.1 - Nome dell&rsquo;Ente</td>
+		</tr>
+		<tr>
+			<td colspan="2">19.2 &ndash; Ruolo</span></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3">19.3 - Informazioni per contattare l&rsquo;Ente</td>
+			<td>19.3.1 - Sito web</td>
+		</tr>
+		<tr>
+			<td>19.3.2 - Telefono</td>
+		</tr>
+		<tr>
+			<td>19.3.3 - E-mail</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>Tipo di rappresentazione spaziale</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">21</td>
+			<td rowspan="2">Risoluzione spaziale</td>
+			<td colspan="2">21.1 - Scala equivalente</td>
+		</tr>
+		<tr>
+			<td colspan="2">21.2 &ndash; Distanza</td>
+		</tr>
+		<tr>
+			<td>22</td>
+			<td>Lingua</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>23</td>
+			<td>Set di caratteri</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>24</td>
+			<td>Categoria tematica</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>25</td>
+			<td>Informazioni supplementari</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4">Vincoli sui dati</th>
+		</tr>
+		<tr>
+			<td>26
+			</td>
+			<td>Limitazione d&rsquo;uso</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>27</td>
+			<td>Vincoli di accesso</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>28</td>
+			<td>Vincoli di fruibilit&agrave;</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>29</td>
+			<td>Altri vincoli</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4">Estensione
+				dei dati</th>
+		</tr>
+		<tr>
+			<td rowspan="4">30</td>
+			<td rowspan="4">Localizzazione geografica</td>
+			<td colspan="2">30.1 - Longitudine Ovest</td>
+		</tr>
+		<tr>
+			<td colspan="2">30.2 - Longitudine Est</td>
+		</tr>
+		<tr>
+			<td colspan="2">30.3 - Latitudine Sud</td>
+		</tr>
+		<tr>
+			<td colspan="2">30.4 - Latitudine Nord</td>
+		</tr>
+		<tr>
+			<td rowspan="4">31</td>
+			<td rowspan="4">Estensione verticale</td>
+			<td colspan="2">31.1 - Quota minima</td>
+		</tr>
+		<tr>
+			<td colspan="2">31.2 - Quota massima</td>
+		</tr>
+		<tr>
+			<td colspan="2">31.3 - Unit&agrave; di misura</td>
+		</tr>
+		<tr>
+			<td colspan="2">31.4 - Datum verticale</td>
+		</tr>
+		<tr>
+			<td rowspan="2">32</td>
+			<td rowspan="2">Estensione temporale</td>
+			<td colspan="2">32.1 - Data inizio</td>
+		</tr>
+		<tr>
+			<td colspan="2">32.2 - Data fine</td>
+		</tr>
+		<tr>
+			<th colspan="4">Qualit&agrave; dei dati</th>
+		</tr>
+		<tr>
+			<td>33</td>
+			<td>Livello di qualit&agrave;</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">34</td>
+			<td rowspan="2">Accuratezza posizionale</td>
+			<td colspan="2">34.1 - Unit&agrave; di misura</td>
+		</tr>
+		<tr>
+			<td colspan="2">34.2 &ndash; Valore</td>
+		</tr>
+		<tr>
+			<td rowspan="2">35</td>
+			<td rowspan="2">Coerenza topologica</td>
+			<td colspan="2">35.1 - Unit&agrave; di misura</td>
+		</tr>
+		<tr>
+			<td colspan="2">35.2 &ndash; Valore</td>
+		</tr>
+		<tr>
+			<td>36</td>
+			<td>Genealogia</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3">37</td>
+			<td rowspan="3">Conformit&agrave;: specifiche</td>
+			<td colspan="2">37.1 &ndash; Titolo</td>
+		</tr>
+		<tr>
+			<td colspan="2">37.2 &ndash; Data</td>
+		</tr>
+		<tr>
+			<td colspan="2">37.3 - Tipo data</td>
+		</tr>
+		<tr>
+			<td>38</td>
+			<td>Conformit&agrave;: grado</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4">Sistema
+				di riferimento</th>
+		</tr>
+		<tr>
+			<td>39</td>
+			<td>Sistema di riferimento spaziale</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>40</td>
+			<td>Sistema di riferimento temporale</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4">Distribuzione dei dati</th>
+		</tr>
+		<tr>
+			<td rowspan="2">41</td>
+			<td rowspan="2">Formato di distribuzione</td>
+			<td colspan="2">42.1 - Nome formato</td>
+		</tr>
+		<tr>
+			<td colspan="2">42.2 - Versione formato</td>
+		</tr>
+		<tr>
+			<td rowspan="5">42</td>
+			<td rowspan="5">Distributore</td>
+			<td colspan="2">43.1 - Nome dell&rsquo;ente</td>
+		</tr>
+		<tr>
+			<td colspan="2">43.2 &ndash; Ruolo</td>
+		</tr>
+		<tr>
+			<td rowspan="3">43.3 - Informazioni per contattare l&rsquo;Ente</td>
+			<td>43.3.1 - Sito web</td>
+		</tr>
+		<tr>
+			<td>43.3.2 - Telefono</td>
+		</tr>
+		<tr>
+			<td>43.3.3 - E-mail</td>
+		</tr>
+		<tr>
+			<td rowspan="4">43</td>
+			<td rowspan="4">Risorsa on line</td>
+			<td colspan="2">44.1 &ndash; URL</td>
+		</tr>
+		<tr>
+			<td colspan="2">44.2 &ndash; Protocollo</td>
+		</tr>
+		<tr>
+			<td colspan="2">44.3 &ndash; Profilo applicativo</td>
+		</tr>
+		<tr>
+			<td colspan="2">44.4 &ndash; Descrizione</td>
+		</tr>
+		<tr>
+			<th colspan="4">Gestione dei dati</th>
+		</tr>
+		<tr>
+			<td>44</td>
+			<td>Frequenza di aggiornamento</td>
+			<td colspan="2">
+			</td>
+		</tr>
+	</table>
+					</section>
+	<section>
+						<h5>Metadati supplementari per specifiche categorie tematiche</h5>
+		<p>La sezione 8.3 delle specifiche INSPIRE sui dati (INSPIRE data specifications) [3] raccomanda di utilizzare alcuni metadati supplementari specifici per alcune categorie tematiche di dati. </p>
+<p>Una panoramica di tali metadati, con l’indicazione dei temi per i quali ne è raccomandato l’uso, è fornita nelle tabelle riportate alle pagg. 133 e 135 delle linee guida INSPIRE sui metadati [2] a cui si rimanda.</p>
+<p>Ai fini delle presenti linee guida, alcuni dei suddetti metadati sono inclusi nei metadati comuni a tutte le tipologie di dati di cui al paragrafo 4.1.1.1. Si tratta, in particolare, dei seguenti elementi:
+<ul>
+<li>Frequenza di aggiornamento;</li>
+<li>Informazioni supplementari;</li>
+<li>Estensione;</li>
+<li>Accuratezza posizionale.</li>
+		</ul>
+	</p>
+<p>Per i metadati non contemplati nelle presenti linee guida e inclusi nell’elenco INSPIRE dei metadati supplementari, si lascia alle singole Amministrazioni la facoltà di documentarli, seguendo le indicazioni delle linee guida INSPIRE sui metadati [2].</p>
+<p>Per le immagini (foto aeree, ortofoto, immagini da telerilevamento, ecc.) e i modelli digitali del terreno (DTM, DEM, ecc.), oltre all’insieme minimo di metadati, si POSSONO documentare gli elementi di metadati riportati nelle tabelle seguenti.</p>
+<p>Lo Standard ISO individua due grandi gruppi per le immagini e i dati raster in generale: i dati “georeferenziabili” per i quali è utile conoscere i punti di controllo e altri parametri allo scopo di processarli per essere georettificati, e i dati georettificati. I metadati comuni ad ambedue le categorie (che quindi vanno documentati sempre in caso di dati raster) sono riportati nella tabella II, nella quale i metadati relativi al contenuto si riferiscono specificatamente alle ortofoto; i metadati relativi ai dati raster georettificati sono riportati nella tabella III, quelli per i dati raster georeferenziabili sono riportati nella tabella IV.</p> 
+<p>Riepilogando, per la documentazione di immagini e DTM, POSSONO essere utilizzati i metadati riportati in tabella II (i primi quattro si riferiscono alle ortofoto) e, a seconda se si tratta di dati georettificati o georeferenziabili, rispettivamente, i metadati delle tabelle III o IV.</p>
+
+	<table class="simple">
+		<tr>
+			<th colspan="3">Contenuto dei dati raster</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Descrizione degli attributi</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Tipo di contenuto</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Risoluzione radiometrica</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Triangolazione aerea</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<th colspan="3">Rrappresentazione spaziale dei dati raster</th>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Numero di dimensioni</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3">6</td>
+			<td rowspan="3">Propriet&agrave; dimensioni</td>
+			<td>6.1 - Nome dimensione</td>
+		</tr>
+		<tr>
+			<td>6.2 - Misura dimensione</td>
+		</tr>
+		<tr>
+			<td>6.3 - Risoluzione</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>Geometria della cella</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Disponibilit&agrave; coefficienti della trasformazione</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+	<p></p>
+	<table class="simple">
+		<tr>
+			<th colspan="3">Rappresentazione spaziale dei dati raster georettificati
+			</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Disponibilit&agrave; dei check-points</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Descrizione check-points</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Coordinate dei vertici</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Punto del pixel</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+	<p></p>
+	<table class="simple">
+		<tr>
+			<th colspan="3">Rappresentazione spaziale dei dati raster &ldquo;georeferenziabili&rdquo;</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Disponibilit&agrave; dei punti di controllo</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Disponibilit&agrave; dei parametri di orientamento</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Parametri per la georefernziazione</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+</section>
+					
+				  </section>
+<section id="srv-md">
+	<h4>Metadati per i servizi territoriali</h4>
+	<p>In questo paragrafo sono definiti i metadati da utilizzare per descrivere i servizi nel Repertorio.</p>
+<p>Nel “Dizionario dei metadati relativi ai servizi” (paragrafo 4.2.4), per ogni metadato, è specificata la definizione, il corrispondente elemento ISO, il tipo, il dominio, il livello di obbligatorietà e la molteplicità.</p>
+<p>Al paragrafo 4.1.2.1 sono individuati i metadati che DEVONO essere applicati a tutte le tipologie di servizi di dati territoriali.</p>
+<p>Al paragrafo 4.1.2.2 sono individuati i metadati supplementari per le categorie di servizi individuate nel Regolamento [UE 1089/2010], ovvero:
+	<ul>
+		<li>servizio di dati territoriali invocabili;</li>
+<li>servizio di dati territoriali interoperabili;</li>
+<li>servizio di dati territoriali armonizzato.</li>
+	</ul>
+		</p>
+<section id="common-srv-md">
+	<h5>Metadati comuni a tutte le tipologie di servizi territoriali</h5>
+	<table class="simple">
+		<tr>
+			<th colspan="4">Informazioni sui metadati</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Identificatore del file</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Lingua dei metadati</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Set dei caratteri dei metadati</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Id file precedente</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">5</td>
+			<td rowspan="2">Livello gerarchico</td>
+			<td colspan="2">5.1 - Livello</td>
+		</tr>
+		<tr>
+			<td colspan="2">5.2 &ndash; Nome livello</td>
+		</tr>
+		<tr>
+			<td rowspan="5">6</td>
+			<td rowspan="5">Responsabile dei metadati</td>
+			<td colspan="2">6.1 - Nome dell&rsquo;Ente</td>
+		</tr>
+		<tr>
+			<td colspan="2">6.2 &ndash; Ruolo</td>
+		</tr>
+		<tr>
+			<td rowspan="3">6.3 - Informazioni per contattare l&rsquo;Ente</td>
+			<td>6.3.1 - Sito web</td>
+		</tr>
+		<tr>
+			<td>6.3.2 - Telefono</td>
+		</tr>
+		<tr>
+			<td>6.3.3 - E-mail</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>Data dei metadati</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Nome dello Standard</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>Versione dello Standard</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4">Identificazione dei servizi</th>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>Titolo</td>
+			<td colspan="2">
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">11</td>
+			<td rowspan="2">Data</td>
+			<td colspan="2">11.1
+				&ndash; Data
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">11.2
+				- Tipo data
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="5"  >
+				12
+			</td>
+			<td rowspan="5"  >
+				Responsabile
+			</td>
+			<td colspan="2">12.1
+				- Nome dell&rsquo;Ente
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">12.2
+				&ndash; Ruolo
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3"  >
+				12.3
+				- Informazioni per contattare l&rsquo;Ente 
+			</td>
+			<td   >
+				12.3.1
+				- Sito web
+			</td>
+		</tr>
+		<tr>
+			<td   >
+				12.3.2
+				- Telefono
+			</td>
+		</tr>
+		<tr>
+			<td   >
+				12.3.3
+				- E-mail
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				13
+			</td>
+			<td  >
+				Identificatore
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				14
+			</td>
+			<td  >
+				Descrizione
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2"  >
+				15
+			</td>
+			<td rowspan="2"  >
+				Parole
+				chiave
+			</td>
+			<td colspan="2">15.1
+				- Parola chiave
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">15.2
+				&ndash; Thesaurus
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="5"  >
+				16
+			</td>
+			<td rowspan="5"  >
+				Punto
+				di contatto
+			</td>
+			<td colspan="2">16.1
+				- Nome dell&rsquo;Ente
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">16.2
+				&ndash; Ruolo
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3"  >
+				16.3
+				- Informazioni per contattare l&rsquo;Ente
+			</td>
+			<td   >
+				16.3.1
+				- Sito web
+			</td>
+		</tr>
+		<tr>
+			<td   >
+				16.3.2
+				- Telefono
+			</td>
+		</tr>
+		<tr>
+			<td   >
+				16.3.3
+				- E-mail
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				17
+			</td>
+			<td  >
+				Tipo
+				di servizio
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				18
+			</td>
+			<td  >
+				Tipo
+				di aggancio
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				19
+			</td>
+			<td  >
+				Risorsa
+				accoppiata
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3"  >
+				20
+			</td>
+			<td rowspan="3"  >
+				Operazioni
+			</td>
+			<td colspan="2">20.1
+				- Nome operazione
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">20.2
+				&ndash; DCP
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">20.3
+				- Punto di connessione
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3"  >
+				21
+			</td>
+			<td rowspan="3"  >
+				Risorsa
+				on line
+			</td>
+			<td colspan="2">21.1
+				- URL
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">21.2
+				- Descrizione
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">21.3
+				- Funzione
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4">
+				<b>Vincoli
+				sui servizi</b>
+			</th>
+		</tr>
+		<tr>
+			<td  >
+				22
+			</td>
+			<td  >
+				Limitazione
+				d&rsquo;uso
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				23
+			</td>
+			<td  >
+				Vincoli
+				di accesso
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				24
+			</td>
+			<td  >
+				Vincoli
+				di fruibilit&agrave;
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				25
+			</td>
+			<td  >
+				Altri
+				vincoli
+			</td>
+			<td colspan="2">
+
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4" >
+				<b>Estensione
+				dei servizi</b>
+			</th>
+		</tr>
+		<tr>
+			<td rowspan="4"  >
+				26
+			</td>
+			<td rowspan="4"  >
+				Localizzazione
+				geografica
+			</td>
+			<td colspan="2">27.1
+				- Longitudine Ovest
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">27.2
+				- Longitudine Est
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">27.3
+				- Latitudine Sud
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">27.4
+				- Latitudine Nord
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2"  >
+				27
+			</td>
+			<td rowspan="2"  >
+				Estensione
+				temporale
+			</td>
+			<td colspan="2">28.1
+				- Data inizio
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">28.2
+				- Data fine
+			</td>
+		</tr>
+		<tr>
+			<th colspan="4" >
+				<b>Qualit&agrave;
+				dei servizi</b>
+			</th>
+		</tr>
+		<tr>
+			<td rowspan="2"  >
+				28
+			</td>
+			<td rowspan="2"  >
+				Livello
+				di qualit&agrave;
+			</td>
+			<td colspan="2">28.1
+				- Livello
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">28.2
+				- Descrizione
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3"  >
+				29
+			</td>
+			<td rowspan="3"  >
+				Conformit&agrave;:
+				specifiche
+			</td>
+			<td colspan="2">29.1
+				&ndash; Titolo
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">29.2
+				&ndash; Data
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">29.3
+				- Tipo data
+			</td>
+		</tr>
+		<tr>
+			<td  >
+				30
+			</td>
+			<td  >
+				Conformit&agrave;:
+				grado
+			</td>
+			<td colspan="2">
+			</td>
+		</tr>
+	</table>
+	
+</section>
+<section id="supplemental-srv-md">
+	<h5>Metadati supplementari per i servizi di dati territoriali</h5>
+	<p>Il Regolamento [UE 1089/2010], ha definito alcune tipologie di servizi di dati territoriali, diversi dai servizi di rete, per i quali, negli allegati V, VI e VII, sono stati individuati alcuni metadati supplementari riportati nelle tabelle che seguono.</p>
+<table class="simple">
+	<tr>
+		<th colspan="3"  >
+			Servizi
+			di dati territoriali invocabili
+		</th>
+	</tr>
+	<tr>
+		<td >
+			1
+		</td>
+		<td >
+			Categoria
+		</td>
+		<td >
+			</td>
+	</tr>
+	<tr>
+		<th colspan="3"  >
+			Servizi
+			di dati territoriali interoperabili
+		</th>
+	</tr>
+	<tr>
+		<td >
+			2
+		</td>
+		<td >
+			Qualit&agrave;
+			del servizio - Criteri
+		</td>
+		<td >
+			</td>
+	</tr>
+	<tr>
+		<td rowspan="3" >
+			3
+		</td>
+		<td rowspan="3" >
+			Qualit&agrave;
+			del servizio - Misurazione
+		</td>
+		<td >
+			3.1
+			- Descrizione
+		</td>
+	</tr>
+	<tr>
+		<td >
+			3.2
+			- Valore </span></font>
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td >
+			3.3
+			&ndash; Unit&agrave;
+		</td>
+	</tr>
+	<tr>
+		<td >
+			4
+		</td>
+		<td >
+			Sistema
+			di riferimento spaziale
+		</td>
+		<td >
+			</td>
+	</tr>
+	<tr>
+		<th colspan="3"  >
+			Servizi
+			di dati territoriali armonizzati
+		</th>
+	</tr>
+	<tr>
+		<td >
+			5
+		</td>
+		<td >
+			Metadati
+			di richiamata
+		</td>
+		<td ></td>
+	</tr>
+</table>
+</section>	
+</section>
+<section id="new-ds-md">
+	<h4>Metadati per le nuove acquisizioni di dati territoriali</h4>
+	<p>In questo paragrafo sono definiti i metadati che POSSONO essere utilizzati nel caso in cui una Amministrazione scelga di descrivere nel Repertorio i dati territoriali che prevede di acquisire.</p>
+<p>Nel “Dizionario dei metadati relativi alle nuove acquisizioni di dati” (paragrafo 4.2.6), per ogni metadato, è specificata la definizione, il tipo, il dominio, il livello di obbligatorietà e la molteplicità.</p>
+<table class="simple">
+    <tr>
+        <th colspan="4">Informazioni sui metadati</th>
+    </tr>
+    <tr>
+        <td >1</td>
+        <td>Identificatore del file</td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Lingua dei metadati</td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td rowspan="5">3</td>
+        <td rowspan="5">Responsabile dei metadati</td>
+        <td colspan="2">3.1 - Nome dell&rsquo;Ente</td>
+    </tr>
+    <tr>
+        <td colspan="2">3.2 &ndash; Ruolo</td>
+    </tr>
+    <tr>
+        <td rowspan="3">3.3 - Informazioni per contattare l&rsquo;Ente</td>
+        <td >3.3.1 - Sito web</td>
+    </tr>
+    <tr>
+        <td >3.3.2 - Telefono</td>
+    </tr>
+    <tr>
+        <td >3.3.3 - E-mail</td>
+    </tr>
+    <tr>
+        <td >4</td>
+        <td >Data dei metadati</td>
+        <td colspan="2" ></td>
+    </tr>
+    <tr>
+        <th colspan="4" >Identificazione dei dati</th>
+    </tr>
+    <tr>
+        <td >5</td>
+        <td >Titolo</td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Data di presunta disponibilit&agrave;</td>
+        <td colspan="2" ></td>
+    </tr>
+    <tr>
+        <td >7</td>
+        <td >Formato di presentazione</td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td rowspan="5" >8</td>
+        <td rowspan="5" >Responsabile</td>
+        <td colspan="2" >8.1 - Nome dell&rsquo;Ente</td>
+    </tr>
+    <tr>
+        <td colspan="2" >8.2 &ndash; Ruolo</td>
+    </tr>
+    <tr>
+        <td rowspan="3" >8.3 - Informazioni per contattare l&rsquo;Ente</td>
+        <td >8.3.1 - Sito web</td>
+    </tr>
+    <tr>
+        <td >
+            8.3.2
+            - Telefono
+        </td>
+    </tr>
+    <tr>
+        <td >
+            8.3.3
+            - E-mail
+        </td>
+    </tr>
+    <tr>
+        <td >
+            9
+        </td>
+        <td >
+            Identificatore
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td >
+            10
+        </td>
+        <td >
+            Altri
+            dettagli
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td >
+            11
+        </td>
+        <td >
+            Descrizione
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td >
+            12
+        </td>
+        <td >
+            Status
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td >
+            13
+        </td>
+        <td >
+            Tipo
+            di rappresentazione spaziale
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td >
+            14
+        </td>
+        <td >
+            Risoluzione
+            spaziale: Scala equivalente
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td >
+            15
+        </td>
+        <td >
+            Categoria
+            tematica
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="4" >
+            16
+        </td>
+        <td rowspan="4" >
+            Localizzazione
+            geografica
+        </td>
+        <td colspan="2" >
+            16.1
+            - Longitudine Ovest
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" >
+            16.2
+            - Longitudine Est
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" >
+            16.3
+            - Latitudine Sud
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" >
+            16.4
+            - Latitudine Nord
+        </td>
+    </tr>
+    <tr>
+        <td >
+            17
+        </td>
+        <td >
+            Limite
+            amministrativo
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td >
+            18
+        </td>
+        <td >
+            Informazioni
+            supplementari
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" >
+            Vincoli
+            sui dati
+        </td>
+    </tr>
+    <tr>
+        <td >
+            19
+        </td>
+        <td >
+            Limitazione
+            d&rsquo;uso
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" >
+            Sistema
+            di riferimento
+        </td>
+    </tr>
+    <tr>
+        <td >
+            20
+        </td>
+        <td>
+            Sistema
+            di riferimento spaziale
+        </td>
+        <td colspan="2" >
+        </td>
+    </tr>
+</table>
+</section>
+</section>
+<section id="dict">
+	<h3>Dizionario dei dati</h3>
+	<p>Di seguito sono riportati i dizionari con le descrizioni delle caratteristiche dei metadati definiti ai paragrafi 4.1.1, 4.1.2 e 4.1.3. </p>
+<p>Oltre al corrispondente termine dello Standard ISO (espresso come il numero dell’elemento inserito nello Standard o con il relativo path), ogni dizionario riporta anche il livello di obbligatorietà, la molteplicità, la tipologia e il dominio dei metadati. Sono riportate anche le liste dei valori e le enumerazioni, che costituiscono il dominio di alcuni metadati.</p>
+<p>Inoltre, al paragrafo 4.2.8, sono riportate le corrispondenze tra:
+	<ul>
+		<li>il set di metadati previsto da INSPIRE e quello definito nel presente documento;</li>
+		<li>i sistemi di riferimento riportati nella lista MD_ReferenceSystemCode e i codici EPSG.</li>
+	</ul>
+		</p>
+<section id="glos">
+	<h4>Glossario</h4>
+	<p><strong>Nome</strong> - Il nome è un’etichetta assegnata all’elemento.</p>
+<p><strong>Numero ISO</strong> - Viene riportato il corrispondente elemento dello Standard ISO indicato con il numero riportato nello Standard o con il path relativo.</p>
+	<p><strong>Definizione</strong> - Descrizione degli elementi di metadati.</p>
+<p><strong>Livello di obbligatorietà</strong> - Indica se un elemento deve essere sempre documentato o se può essere omesso. Il campo può assumere i valori: obbligatorio (mandatory) (M), che indica che l’elemento DEVE essere documentato sempre, opzionale (O) che indica che quell’elemento PUÒ essere anche omesso, condizionato (C), che indica che l’elemento è obbligatorio sotto determinate condizioni (rappresenta una scelta tra due o più opzioni e uno diventa obbligatorio, è obbligatorio se qualche altro elemento assume un determinato valore, …). Nell’ultimo caso, se non diversamente indicato nel dizionario, si fa riferimento alle condizioni riportate nello Standard ISO 19115.</p>
+<p><strong>Occorrenza massima (max)</strong> - Specifica il numero massimo di istanze che gli elementi e/o le entità dei metadati possono avere. Una singola occorrenza è indicata con “1”; più occorrenze sono indicate con “N”.</p>
+<p><strong>Tipo di dato</strong> - Specifica l’insieme di valori per rappresentare l’elemento dei metadati (es. intero, reale, stringa, …).</p>
+<p><strong>Dominio</strong> - Il dominio indica i valori possibili per l’elemento.
+
+</section>
+<section id="ds-dict">
+	<h4>Dizionario dei metadati relativi ai dati territoriali</h4>
+	<table class="simple" width="98%" cellpadding="7" cellspacing="0">
 	<colgroup>
 		<col width="18*">
 		<col width="26*">
@@ -4490,1472 +5977,9 @@ o	servizi di dati territoriali armonizzato.</p>
 	</tr>
 		  </tbody>
 </table>
-      
-      <section>
-        <h2><dfn>bar</dfn> attribute</h2>
-        <p>When getting, the <a>bar</a> attribute returns you a 🍹.</p>
-      </section>
-      <section>
-        <h2><dfn>doTheFoo(DOMString thing)</dfn> method</h2>
-        <p>When called, <code>doTheFoo(<var>thing</var>)</code> it MUST behave as follows:</p>
-        <ol class="algorithm">
-          <li>If <var>thing</var>....</li>
-          <li>Let <var>someProp</var>... of the [[!ISO-19115]] spec.</li>
-        </ol>
-      </section>
-    </section>
-   <section id="term">
-    <h2>Terminologia</h2>
-	   <section>
-        <h3>Termini e definizioni</h3>
-      <p>
-        Ai fini del presente documento, oltre alle definizioni pertinenti di cui all’art. 1 del [D.Lgs. 82/2005], si applicano le seguenti definizioni:
-</p>
-	   <p><strong>amministrazione titolare del dato</strong>: la pubblica amministrazione, di cui all’articolo 1, comma 2, del decreto legislativo n. 165 del 2001, che produce e detiene il dato originale, ovvero la versione di riferimento da cui derivano eventuali copie e che ne può disporre liberamente;</p>
-           <p><strong>classe</strong>: insieme di oggetti simili dotati di proprietà comuni;</p>
-	   <p><strong>dataset</strong>: collezione identificabile di dati;</p>
-	   <p><strong>dati territoriali di interesse generale</strong>: i dati territoriali individuati come dati di interesse generale per le finalità di pubblicazione nel Repertorio, previste dell’articolo 59, comma 3, del decreto legislativo 7 marzo 2005, n. 82 e riportati nell’allegato 1, che costituisce parte integrante del presente documento;</p>
-	   <p><strong>direttiva INSPIRE</strong>: la direttiva 2007/2/CE del Parlamento europeo e del Consiglio del 14 marzo 2007, che istituisce un’infrastruttura per l’informazione territoriale nella Comunità europea, recepita in Italia con il decreto legislativo 27 gennaio 2010, n. 32;</p>
-           <p><strong>dizionario dei dati</strong>: enumerazione informale in linguaggio corrente delle descrizioni degli oggetti;</p>
-	   <p><strong>enumerazione</strong>: elenco bloccato di valori;</p>
-	   <p><strong>lista di valori</strong>: elenco non bloccato di valori. Può essere considerata una enumerazione flessibile;</p>
-	   <p><strong>metadati</strong>: informazioni che descrivono i dati territoriali e i servizi ad essi relativi e che consentono di registrare, ricercare e utilizzare tali dati e servizi;</p>
-	   <p><strong>Repertorio</strong>: il Repertorio nazionale dei dati territoriali istituito presso l’Agenzia per l’Italia Digitale, ai sensi dell’articolo 59, comma 3, del decreto legislativo 7 marzo 2005, n. 82, raggiungibile al dominio https://geodati.gov.it;</p>
-	   <p><strong>schema</strong>: descrizione di un modello attraverso un linguaggio formale;</p>
-	   <p><strong>schema XML</strong>: modalità per definire la struttura, il contenuto e la semantica dei documenti XML [ISO 19139];</p>
-	   <p><strong>serie di dataset</strong>: collezione di dataset che condividono le stesse specifiche di prodotto;</p>
-	   <p><strong>servizi di ricerca</strong>: servizi che consentono di cercare i set di dati territoriali e i servizi ad essi relativi in base al contenuto dei metadati corrispondenti e di visualizzare il contenuto dei metadati;</p>
-	   <p><strong>servizi relativi ai dati territoriali</strong>: le operazioni che possono essere eseguite, con un’applicazione informatica, sui dati territoriali o sui metadati connessi;</p>
-	   <p><strong>servizio di dati armonizzati</strong>: un servizio di dati territoriali interoperabile che soddisfa le prescrizioni di cui all’allegato VII del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014];</p>
-	   <p><strong>servizio di dati invocabili</strong>: un servizio di dati territoriali: a) i cui metadati soddisfano le prescrizioni del regolamento (CE) n. 1205/2008 della Commissione; b) di cui almeno un localizzatore della risorsa è un punto di accesso; c) che sia conforme ad un insieme di specifiche tecniche documentate e accessibili al pubblico che forniscono le informazioni necessarie per la sua esecuzione [Regolamento (UE) n. 1312/2014];</p>
-	   <p><strong>servizio di dati interoperabili</strong>: un servizio di dati territoriali richiamabili che soddisfa le prescrizioni di cui all’allegato VI del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014].</p>
-	  </section>
-	   <section>
-        <h3>Acronimi</h3>
-		   <p><strong>AgID</strong>	Agenzia per l’Italia Digitale</p>
-<p><strong>CAD</strong>	Codice Amministrazione Digitale, D. Lgs. 7 marzo 2005, n. 82</p>
-<p><strong>IPA</strong>	Indice dei domicili digitali delle pubbliche amministrazioni e dei gestori di pubblici servizi</p>
-<p><strong>PA</strong>	Pubblica Amministrazione</p>
-<p><strong>UML</strong>	Unified Modeling Language</p>
-<p><strong>URI</strong>	Uniform Resource Identifier</p>
-<p><strong>XML</strong>	Extensible Markup Language</p>
-
-	  </section>
-	  </section>
-	  
-	  <section id="princ">
-		  <h2>Principi generali</h2>
-		  <section>
-			<h3>Funzioni del Repertorio</h3>
-			  <p>Il Repertorio di cui all’articolo 59, comma 3, del [D.Lgs. 82/2005], costituisce il catalogo nazionale dei metadati riguardanti i dati territoriali ed i servizi ad essi relativi, disponibili presso le pubbliche amministrazioni.</p>
-<p>Il Repertorio eroga i servizi di ricerca di cui all’articolo 7, comma 1, lettera a) del [D.Lgs. 32/2010], e rappresenta il punto di accesso nazionale ai fini dell’alimentazione del geoportale di cui all’art. 15, comma 1 della direttiva INSPIRE.</p>
-<p>I metadati resi disponibili attraverso il servizio di ricerca erogato dal Repertorio costituiscono la base informativa per il calcolo degli indicatori per il monitoraggio di cui alla Decisione 2009/442/CE della Commissione del 5 giugno 2009 recante attuazione della direttiva INSPIRE per quanto riguarda il monitoraggio e la rendicontazione.</p>
-<p>Il Repertorio costituisce parte integrante dell’infrastruttura nazionale per l’informazione territoriale e del monitoraggio ambientale di cui all’articolo 3, comma 1, del [D.Lgs. 32/2010], relativamente alla raccolta dei metadati per i dati territoriali ed i relativi servizi.</p>
-
-		  </section>
-		  <section>
-			<h3>Contenuto del Repertorio</h3>
-			  <p>Il Repertorio contiene i metadati dei dati territoriali di interesse generale elencati nell’allegato 1 e dei relativi servizi.</p>
-<p>Il Repertorio contiene altresì i metadati relativi ai dati e servizi territoriali che l’amministrazione titolare degli stessi reputi opportuno documentare.</p>
-		  </section>
-		  <section>
-			<h3>Efficacia della pubblicazione nel Repertorio</h3>
-			  <p>La pubblicazione dei metadati nel Repertorio certifica l’esistenza del relativo dato e assicura il rispetto degli adempimenti e la conformità alla direttiva INSPIRE, ai Regolamenti [CE 1205/2008] e [UE 1089/2010], relativamente ai metadati per l’interoperabilità (ex art. 13) e ai metadati per i servizi di dati territoriali di cui agli allegati V, VI e VII, della Commissione e al [D.Lgs. 32/2010].</p>
-<p>L’amministrazione titolare dei dati territoriali resta responsabile della correttezza, della tenuta, della gestione e dell’aggiornamento dei dati medesimi. È altresì responsabile della correttezza e dell’aggiornamento dei relativi metadati pubblicati nel Repertorio.</p>
-
-		  </section>
-		   <section>
-			<h3>Creazione e aggiornamento dei metadati</h3>
-			  <p>Le amministrazioni DEVONO alimentare e aggiornare il Repertorio in conformità alle specifiche tecniche definite con questo documento di linee guida.</p>
-<p>Entro tre mesi dall’acquisizione di nuovi dati territoriali di interesse generale o dall’aggiornamento di dati esistenti, e servizi ad essi relativi, le amministrazioni titolari DEVONO provvedere alla pubblicazione dei relativi metadati nel Repertorio.</p>
-<p>Le amministrazioni POSSONO, altresì, inserire nel Repertorio i metadati relativi ai dati territoriali ed eventuali servizi che intendono acquisire e sviluppare e, quindi, non ancora disponibili.</p>
-<p>Previa comunicazione all’Agenzia per l’Italia Digitale e ferma restando la responsabilità diretta dell’amministrazione titolare, per tutte le attività di alimentazione e aggiornamento del Repertorio, le amministrazioni titolari dei dati, e dei relativi servizi, POSSONO avvalersi di altra pubblica amministrazione ovvero di altro soggetto individuato ai sensi della normativa vigente.</p> 
-		  </section>
-		  <section>
-			<h3>Gestione del Repertorio</h3>
-			  <p>L’Agenzia per l’Italia Digitale cura la progettazione, la realizzazione, lo sviluppo e la gestione organizzativa e tecnologica del Repertorio nell’ambito delle infrastrutture condivise nazionali SPC.</p>
-<p>Il servizio di ricerca erogato dal Repertorio è conforme ai requisiti e alle caratteristiche specifiche di cui all’allegato II del Regolamento [CE 976/2009].</p>
-<p>Per tutte le attività di realizzazione e gestione del Repertorio, AgID può avvalersi di soggetti terzi.</p>
-<p>Agli oneri finanziari per la gestione del Repertorio si provvede ai sensi dell’articolo 59, comma 7, del [D.Lgs. 82/2005].</p> 
-		  </section>
-		  <section>
-			<h3>Accesso al Repertorio</h3>
-			  <p>L’accesso al Repertorio per la consultazione dei metadati è pubblico e gratuito.</p>
-<p>Ai fini dell’alimentazione del Repertorio, l’accesso all’area dedicata alla gestione dei metadati è riservato alle amministrazioni titolari di dati e servizi previo accreditamento da effettuarsi secondo le modalità descritte nel Capitolo 4.</p>
-		  </section>
-		  <section>
-			<h3>Pianificazione</h3>
-			  <p>I metadati contenuti nel Repertorio costituiscono la base informativa attraverso la quale le amministrazioni possono verificare l’eventuale esistenza di esigenze comuni o analoghe e pianificare l’attività di acquisizione dei dati in maniera congiunta, con l’obiettivo di minimizzare i costi sostenuti dalle singole Amministrazioni, informandone AgID.</p>
-		  </section>
-		  <section>
-			<h3>Coordinamento con il portale nazionale dei dati aperti</h3>
-			  <p>Anche nel caso di dati territoriali di tipo aperto, i relativi metadati DEVONO essere documentati esclusivamente nel Repertorio secondo le regole definite nelle presenti linee guida. </p>
-<p>Il Repertorio garantisce l’accesso ai dati territoriali di tipo aperto rendendo disponibile i relativi metadati, secondo gli standard di riferimento, anche nel portale nazionale dei dati aperti di cui all’art. 9 del decreto legislativo n. 36 del 2006 come modificato dal decreto legislativo 8 maggio 2015, n. 102.</p>
-<p>AgID adotta pertinenti linee guida operative per disciplinare le modalità per il coordinamento e l’integrazione dei due cataloghi.
-</p>
-		  </section>
-		  <section>
-			<h3>Guide operative</h3>
-			  <p>Per l’attuazione di quanto indicato nelle presenti linee guida, AgID adotta guide operative per fornire alle amministrazioni indicazioni e istruzioni dettagliate per l’implementazione delle regole tecniche contenute in questo documento di linee guida.</p>
-<p>Dette guide operative sono pubblicate sul sito istituzionale del Repertorio.
-</p>
-		  </section>
-	  </section>
-	  
-	  <section id="req">
-		  <h2>Requisiti</h2>
-		  <section>
-			  <h3>Contenuto del Repertorio</h3>
-			  <p>Ai fini del presente documento, sono individuati:</p>
-			  <ul>
-				  <li>l’insieme minimo di metadati comune a tutte le tipologie di dati territoriali;</li>
-				  <li>i metadati supplementari opzionali per alcune categorie tematiche;</li>
-				  <li>il set di metadati necessario per documentare i servizi;</li>
-				  <li>il set opzionale di metadati per documentare le nuove acquisizioni ovvero i dati territoriali che una Pubblica Amministrazione prevede di acquisire.</li>
-			  </ul>
-				<section>
-					<h4>Metadati per i dati territoriali</h4>
-					<p>In questo paragrafo sono definiti i metadati che DEVONO essere utilizzati per descrivere i dati territoriali nel Repertorio. Tali metadati sono coerenti con quanto disposto dai Regolamenti [CE 1205/2008] e [UE 1089/2010].</p>
-<p>Nel “Dizionario dei metadati relativi ai dati territoriali” (paragrafo 4.2.2), per ogni metadato, è specificata la definizione, il corrispondente elemento ISO, il tipo, il dominio, il livello di obbligatorietà e la molteplicità.</p>
-<p>Al paragrafo 4.1.1.1 sono individuati i metadati che DEVONO essere applicati a tutte le tipologie di dati territoriali. </p>
-<p>Al paragrafo 4.1.1.2 sono individuati i metadati supplementari opzionali che le amministrazioni POSSONO utilizzare per alcune specifiche categorie tematiche.</p>
-					<section>
-						<h5>Metadati comuni a tutte le tipologie di dati territoriali</h5>
-						<table class="simple">
-	
-		<tr>
-			<th colspan="4">Informazioni sui metadati</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Identificatore del file</td>
-			<td colspan="2"></td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Lingua dei metadati</td>
-			<td colspan="2"></td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Set dei caratteri dei metadati</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Id file precedente</td>
-			<td colspan="2"></td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>Livello gerarchico</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="5">6</td>
-			<td rowspan="5">Responsabile dei metadati</td>
-			<td colspan="2">6.1 - Nome dell&rsquo;Ente</td>
-		</tr>
-		<tr>
-			<td colspan="2">6.2 &ndash; Ruolo</td>
-		</tr>
-		<tr>
-			<td rowspan="3">6.3 - Informazioni per contattare l&rsquo;Ente</td>
-			<td>6.3.1 - Sito web</td>
-		</tr>
-		<tr>
-			<td>6.3.2 - Telefono</td>
-		</tr>
-		<tr>
-			<td>6.3.3 - E-mail</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Data dei metadati</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Nome dello Standard</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>Versione dello Standard</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4">Identificazione dei dati</th>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>Titolo</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2">11</td>
-			<td rowspan="2">Data</td>
-			<td colspan="2">11.1 &ndash; Data</td>
-		</tr>
-		<tr>
-			<td colspan="2">11.2 - Tipo data</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>Formato di presentazione</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="5">13</td>
-			<td rowspan="5">Responsabile</td>
-			<td colspan="2">13.1 - Nome dell&rsquo;Ente</td>
-		</tr>
-		<tr>
-			<td colspan="2">13.2 &ndash; Ruolo</td>
-		</tr>
-		<tr>
-			<td rowspan="3">13.3 - Informazioni per contattare l&rsquo;Ente</td>
-			<td>13.3.1 - Sito web</td>
-		</tr>
-		<tr>
-			<td>13.3.2 - Telefono</td>
-		</tr>
-		<tr>
-			<td>13.3.3 - E-mail</td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>Identificatore</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>Id livello superiore</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>Altri dettagli</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>Descrizione</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2">18</td>
-			<td rowspan="2">Parole chiave</td>
-			<td colspan="2">18.1 - Parola chiave</td>
-		</tr>
-		<tr>
-			<td colspan="2">18.2 &ndash; Thesaurus</td>
-		</tr>
-		<tr>
-			<td rowspan="5">19</td>
-			<td rowspan="5">Punto di contatto</td>
-			<td colspan="2">19.1 - Nome dell&rsquo;Ente</td>
-		</tr>
-		<tr>
-			<td colspan="2">19.2 &ndash; Ruolo</span></font></p>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3">19.3 - Informazioni per contattare l&rsquo;Ente</td>
-			<td>19.3.1 - Sito web</td>
-		</tr>
-		<tr>
-			<td>19.3.2 - Telefono</td>
-		</tr>
-		<tr>
-			<td>19.3.3 - E-mail</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>Tipo di rappresentazione spaziale</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2">21</td>
-			<td rowspan="2">Risoluzione spaziale</td>
-			<td colspan="2">21.1 - Scala equivalente</td>
-		</tr>
-		<tr>
-			<td colspan="2">21.2 &ndash; Distanza</td>
-		</tr>
-		<tr>
-			<td>22</td>
-			<td>Lingua</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>23</td>
-			<td>Set di caratteri</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>24</td>
-			<td>Categoria tematica</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>25</td>
-			<td>Informazioni supplementari</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4">Vincoli sui dati</th>
-		</tr>
-		<tr>
-			<td>26
-			</td>
-			<td>Limitazione d&rsquo;uso</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>27</td>
-			<td>Vincoli di accesso</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>28</td>
-			<td>Vincoli di fruibilit&agrave;</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>29</td>
-			<td>Altri vincoli</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4">Estensione
-				dei dati</th>
-		</tr>
-		<tr>
-			<td rowspan="4">30</td>
-			<td rowspan="4">Localizzazione geografica</td>
-			<td colspan="2">30.1 - Longitudine Ovest</td>
-		</tr>
-		<tr>
-			<td colspan="2">30.2 - Longitudine Est</td>
-		</tr>
-		<tr>
-			<td colspan="2">30.3 - Latitudine Sud</td>
-		</tr>
-		<tr>
-			<td colspan="2">30.4 - Latitudine Nord</td>
-		</tr>
-		<tr>
-			<td rowspan="4">31</td>
-			<td rowspan="4">Estensione verticale</td>
-			<td colspan="2">31.1 - Quota minima</td>
-		</tr>
-		<tr>
-			<td colspan="2">31.2 - Quota massima</td>
-		</tr>
-		<tr>
-			<td colspan="2">31.3 - Unit&agrave; di misura</td>
-		</tr>
-		<tr>
-			<td colspan="2">31.4 - Datum verticale</td>
-		</tr>
-		<tr>
-			<td rowspan="2">32</td>
-			<td rowspan="2">Estensione temporale</td>
-			<td colspan="2">32.1 - Data inizio</td>
-		</tr>
-		<tr>
-			<td colspan="2">32.2 - Data fine</td>
-		</tr>
-		<tr>
-			<th colspan="4">Qualit&agrave; dei dati</th>
-		</tr>
-		<tr>
-			<td>33</td>
-			<td>Livello di qualit&agrave;</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2">34</td>
-			<td rowspan="2">Accuratezza posizionale</td>
-			<td colspan="2">34.1 - Unit&agrave; di misura</td>
-		</tr>
-		<tr>
-			<td colspan="2">34.2 &ndash; Valore</td>
-		</tr>
-		<tr>
-			<td rowspan="2">35</td>
-			<td rowspan="2">Coerenza topologica</td>
-			<td colspan="2">35.1 - Unit&agrave; di misura</td>
-		</tr>
-		<tr>
-			<td colspan="2">35.2 &ndash; Valore</td>
-		</tr>
-		<tr>
-			<td>36</td>
-			<td>Genealogia</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3">37</td>
-			<td rowspan="3">Conformit&agrave;: specifiche</td>
-			<td colspan="2">37.1 &ndash; Titolo</td>
-		</tr>
-		<tr>
-			<td colspan="2">37.2 &ndash; Data</td>
-		</tr>
-		<tr>
-			<td colspan="2">37.3 - Tipo data</td>
-		</tr>
-		<tr>
-			<td>38</td>
-			<td>Conformit&agrave;: grado</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4">Sistema
-				di riferimento</th>
-		</tr>
-		<tr>
-			<td>39</td>
-			<td>Sistema di riferimento spaziale</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>40</td>
-			<td>Sistema di riferimento temporale</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4">Distribuzione dei dati</th>
-		</tr>
-		<tr>
-			<td rowspan="2">41</td>
-			<td rowspan="2">Formato di distribuzione</td>
-			<td colspan="2">42.1 - Nome formato</td>
-		</tr>
-		<tr>
-			<td colspan="2">42.2 - Versione formato</td>
-		</tr>
-		<tr>
-			<td rowspan="5">42</td>
-			<td rowspan="5">Distributore</td>
-			<td colspan="2">43.1 - Nome dell&rsquo;ente</td>
-		</tr>
-		<tr>
-			<td colspan="2">43.2 &ndash; Ruolo</td>
-		</tr>
-		<tr>
-			<td rowspan="3">43.3 - Informazioni per contattare l&rsquo;Ente</td>
-			<td>43.3.1 - Sito web</td>
-		</tr>
-		<tr>
-			<td>43.3.2 - Telefono</td>
-		</tr>
-		<tr>
-			<td>43.3.3 - E-mail</td>
-		</tr>
-		<tr>
-			<td rowspan="4">43</td>
-			<td rowspan="4">Risorsa on line</td>
-			<td colspan="2">44.1 &ndash; URL</td>
-		</tr>
-		<tr>
-			<td colspan="2">44.2 &ndash; Protocollo</td>
-		</tr>
-		<tr>
-			<td colspan="2">44.3 &ndash; Profilo applicativo</td>
-		</tr>
-		<tr>
-			<td colspan="2">44.4 &ndash; Descrizione</td>
-		</tr>
-		<tr>
-			<th colspan="4">Gestione dei dati</th>
-		</tr>
-		<tr>
-			<td>44</td>
-			<td>Frequenza di aggiornamento</td>
-			<td colspan="2">
-			</td>
-		</tr>
-	</table>
-					</section>
-	<section>
-						<h5>Metadati supplementari per specifiche categorie tematiche</h5>
-		<p>La sezione 8.3 delle specifiche INSPIRE sui dati (INSPIRE data specifications) [3] raccomanda di utilizzare alcuni metadati supplementari specifici per alcune categorie tematiche di dati. </p>
-<p>Una panoramica di tali metadati, con l’indicazione dei temi per i quali ne è raccomandato l’uso, è fornita nelle tabelle riportate alle pagg. 133 e 135 delle linee guida INSPIRE sui metadati [2] a cui si rimanda.</p>
-<p>Ai fini delle presenti linee guida, alcuni dei suddetti metadati sono inclusi nei metadati comuni a tutte le tipologie di dati di cui al paragrafo 4.1.1.1. Si tratta, in particolare, dei seguenti elementi:
-<ul>
-<li>Frequenza di aggiornamento;</li>
-<li>Informazioni supplementari;</li>
-<li>Estensione;</li>
-<li>Accuratezza posizionale.</li>
-		</ul>
-	</p>
-<p>Per i metadati non contemplati nelle presenti linee guida e inclusi nell’elenco INSPIRE dei metadati supplementari, si lascia alle singole Amministrazioni la facoltà di documentarli, seguendo le indicazioni delle linee guida INSPIRE sui metadati [2].</p>
-<p>Per le immagini (foto aeree, ortofoto, immagini da telerilevamento, ecc.) e i modelli digitali del terreno (DTM, DEM, ecc.), oltre all’insieme minimo di metadati, si POSSONO documentare gli elementi di metadati riportati nelle tabelle seguenti.</p>
-<p>Lo Standard ISO individua due grandi gruppi per le immagini e i dati raster in generale: i dati “georeferenziabili” per i quali è utile conoscere i punti di controllo e altri parametri allo scopo di processarli per essere georettificati, e i dati georettificati. I metadati comuni ad ambedue le categorie (che quindi vanno documentati sempre in caso di dati raster) sono riportati nella tabella II, nella quale i metadati relativi al contenuto si riferiscono specificatamente alle ortofoto; i metadati relativi ai dati raster georettificati sono riportati nella tabella III, quelli per i dati raster georeferenziabili sono riportati nella tabella IV.</p> 
-<p>Riepilogando, per la documentazione di immagini e DTM, POSSONO essere utilizzati i metadati riportati in tabella II (i primi quattro si riferiscono alle ortofoto) e, a seconda se si tratta di dati georettificati o georeferenziabili, rispettivamente, i metadati delle tabelle III o IV.</p>
-
-	<table class="simple">
-		<tr>
-			<th colspan="3">Contenuto dei dati raster</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Descrizione degli attributi</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Tipo di contenuto</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Risoluzione radiometrica</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Triangolazione aerea</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<th colspan="3">Rrappresentazione spaziale dei dati raster</th>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>Numero di dimensioni</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3">6</td>
-			<td rowspan="3">Propriet&agrave; dimensioni</td>
-			<td>6.1 - Nome dimensione</td>
-		</tr>
-		<tr>
-			<td>6.2 - Misura dimensione</td>
-		</tr>
-		<tr>
-			<td>6.3 - Risoluzione</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Geometria della cella</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Disponibilit&agrave; coefficienti della trasformazione</td>
-			<td>
-			</td>
-		</tr>
-	</table>
-	<p></p>
-	<table class="simple">
-		<tr>
-			<th colspan="3">Rappresentazione spaziale dei dati raster georettificati
-			</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Disponibilit&agrave; dei check-points</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Descrizione check-points</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Coordinate dei vertici</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Punto del pixel</td>
-			<td>
-			</td>
-		</tr>
-	</table>
-	<p></p>
-	<table class="simple">
-		<tr>
-			<th colspan="3">Rappresentazione spaziale dei dati raster &ldquo;georeferenziabili&rdquo;</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Disponibilit&agrave; dei punti di controllo</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Disponibilit&agrave; dei parametri di orientamento</td>
-			<td>
-			</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Parametri per la georefernziazione</td>
-			<td>
-			</td>
-		</tr>
-	</table>
 </section>
-					
-				  </section>
-<section id="srv-md">
-	<h4>Metadati per i servizi territoriali</h4>
-	<p>In questo paragrafo sono definiti i metadati da utilizzare per descrivere i servizi nel Repertorio.</p>
-<p>Nel “Dizionario dei metadati relativi ai servizi” (paragrafo 4.2.4), per ogni metadato, è specificata la definizione, il corrispondente elemento ISO, il tipo, il dominio, il livello di obbligatorietà e la molteplicità.</p>
-<p>Al paragrafo 4.1.2.1 sono individuati i metadati che DEVONO essere applicati a tutte le tipologie di servizi di dati territoriali.</p>
-<p>Al paragrafo 4.1.2.2 sono individuati i metadati supplementari per le categorie di servizi individuate nel Regolamento [UE 1089/2010], ovvero:
-	<ul>
-		<li>servizio di dati territoriali invocabili;</li>
-<li>servizio di dati territoriali interoperabili;</li>
-<li>servizio di dati territoriali armonizzato.</li>
-	</ul>
-		</p>
-<section id="common-srv-md">
-	<h5>Metadati comuni a tutte le tipologie di servizi territoriali</h5>
-	<table class="simple">
-		<tr>
-			<th colspan="4">Informazioni sui metadati</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Identificatore del file</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Lingua dei metadati</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Set dei caratteri dei metadati</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Id file precedente</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2">5</td>
-			<td rowspan="2">Livello gerarchico</td>
-			<td colspan="2">5.1 - Livello</td>
-		</tr>
-		<tr>
-			<td colspan="2">5.2 &ndash; Nome livello</td>
-		</tr>
-		<tr>
-			<td rowspan="5">6</td>
-			<td rowspan="5">Responsabile dei metadati</td>
-			<td colspan="2">6.1 - Nome dell&rsquo;Ente</td>
-		</tr>
-		<tr>
-			<td colspan="2">6.2 &ndash; Ruolo</td>
-		</tr>
-		<tr>
-			<td rowspan="3">6.3 - Informazioni per contattare l&rsquo;Ente</td>
-			<td>6.3.1 - Sito web</td>
-		</tr>
-		<tr>
-			<td>6.3.2 - Telefono</td>
-		</tr>
-		<tr>
-			<td>6.3.3 - E-mail</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Data dei metadati</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Nome dello Standard</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>Versione dello Standard</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4">Identificazione dei servizi</th>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>Titolo</td>
-			<td colspan="2">
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2">11</td>
-			<td rowspan="2">Data</td>
-			<td colspan="2">11.1
-				&ndash; Data
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">11.2
-				- Tipo data
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="5"  >
-				12
-			</td>
-			<td rowspan="5"  >
-				Responsabile
-			</td>
-			<td colspan="2">12.1
-				- Nome dell&rsquo;Ente
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">12.2
-				&ndash; Ruolo
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3"  >
-				12.3
-				- Informazioni per contattare l&rsquo;Ente 
-			</td>
-			<td   >
-				12.3.1
-				- Sito web
-			</td>
-		</tr>
-		<tr>
-			<td   >
-				12.3.2
-				- Telefono
-			</td>
-		</tr>
-		<tr>
-			<td   >
-				12.3.3
-				- E-mail
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				13
-			</td>
-			<td  >
-				Identificatore
-			</td>
-			<td colspan="2">
 
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				14
-			</td>
-			<td  >
-				Descrizione
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2"  >
-				15
-			</td>
-			<td rowspan="2"  >
-				Parole
-				chiave
-			</td>
-			<td colspan="2">15.1
-				- Parola chiave
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">15.2
-				&ndash; Thesaurus
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="5"  >
-				16
-			</td>
-			<td rowspan="5"  >
-				Punto
-				di contatto
-			</td>
-			<td colspan="2">16.1
-				- Nome dell&rsquo;Ente
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">16.2
-				&ndash; Ruolo
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3"  >
-				16.3
-				- Informazioni per contattare l&rsquo;Ente
-			</td>
-			<td   >
-				16.3.1
-				- Sito web
-			</td>
-		</tr>
-		<tr>
-			<td   >
-				16.3.2
-				- Telefono
-			</td>
-		</tr>
-		<tr>
-			<td   >
-				16.3.3
-				- E-mail
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				17
-			</td>
-			<td  >
-				Tipo
-				di servizio
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				18
-			</td>
-			<td  >
-				Tipo
-				di aggancio
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				19
-			</td>
-			<td  >
-				Risorsa
-				accoppiata
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3"  >
-				20
-			</td>
-			<td rowspan="3"  >
-				Operazioni
-			</td>
-			<td colspan="2">20.1
-				- Nome operazione
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">20.2
-				&ndash; DCP
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">20.3
-				- Punto di connessione
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3"  >
-				21
-			</td>
-			<td rowspan="3"  >
-				Risorsa
-				on line
-			</td>
-			<td colspan="2">21.1
-				- URL
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">21.2
-				- Descrizione
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">21.3
-				- Funzione
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4">
-				<b>Vincoli
-				sui servizi</b>
-			</th>
-		</tr>
-		<tr>
-			<td  >
-				22
-			</td>
-			<td  >
-				Limitazione
-				d&rsquo;uso
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				23
-			</td>
-			<td  >
-				Vincoli
-				di accesso
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				24
-			</td>
-			<td  >
-				Vincoli
-				di fruibilit&agrave;
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				25
-			</td>
-			<td  >
-				Altri
-				vincoli
-			</td>
-			<td colspan="2">
-
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4" >
-				<b>Estensione
-				dei servizi</b>
-			</th>
-		</tr>
-		<tr>
-			<td rowspan="4"  >
-				26
-			</td>
-			<td rowspan="4"  >
-				Localizzazione
-				geografica
-			</td>
-			<td colspan="2">27.1
-				- Longitudine Ovest
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">27.2
-				- Longitudine Est
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">27.3
-				- Latitudine Sud
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">27.4
-				- Latitudine Nord
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="2"  >
-				27
-			</td>
-			<td rowspan="2"  >
-				Estensione
-				temporale
-			</td>
-			<td colspan="2">28.1
-				- Data inizio
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">28.2
-				- Data fine
-			</td>
-		</tr>
-		<tr>
-			<th colspan="4" >
-				<b>Qualit&agrave;
-				dei servizi</b>
-			</th>
-		</tr>
-		<tr>
-			<td rowspan="2"  >
-				28
-			</td>
-			<td rowspan="2"  >
-				Livello
-				di qualit&agrave;
-			</td>
-			<td colspan="2">28.1
-				- Livello
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">28.2
-				- Descrizione
-			</td>
-		</tr>
-		<tr>
-			<td rowspan="3"  >
-				29
-			</td>
-			<td rowspan="3"  >
-				Conformit&agrave;:
-				specifiche
-			</td>
-			<td colspan="2">29.1
-				&ndash; Titolo
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">29.2
-				&ndash; Data
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">29.3
-				- Tipo data
-			</td>
-		</tr>
-		<tr>
-			<td  >
-				30
-			</td>
-			<td  >
-				Conformit&agrave;:
-				grado
-			</td>
-			<td colspan="2">
-			</td>
-		</tr>
-	</table>
-	
 </section>
-<section id="supplemental-srv-md">
-	<h5>Metadati supplementari per i servizi di dati territoriali</h5>
-	<p>Il Regolamento [UE 1089/2010], ha definito alcune tipologie di servizi di dati territoriali, diversi dai servizi di rete, per i quali, negli allegati V, VI e VII, sono stati individuati alcuni metadati supplementari riportati nelle tabelle che seguono.</p>
-<table class="simple">
-	<tr>
-		<th colspan="3"  >
-			Servizi
-			di dati territoriali invocabili
-		</th>
-	</tr>
-	<tr>
-		<td >
-			1
-		</td>
-		<td >
-			Categoria
-		</td>
-		<td >
-			</td>
-	</tr>
-	<tr>
-		<th colspan="3"  >
-			Servizi
-			di dati territoriali interoperabili
-		</th>
-	</tr>
-	<tr>
-		<td >
-			2
-		</td>
-		<td >
-			Qualit&agrave;
-			del servizio - Criteri
-		</td>
-		<td >
-			</td>
-	</tr>
-	<tr>
-		<td rowspan="3" >
-			3
-		</td>
-		<td rowspan="3" >
-			Qualit&agrave;
-			del servizio - Misurazione
-		</td>
-		<td >
-			3.1
-			- Descrizione
-		</td>
-	</tr>
-	<tr>
-		<td >
-			3.2
-			- Valore </span></font>
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td >
-			3.3
-			&ndash; Unit&agrave;
-		</td>
-	</tr>
-	<tr>
-		<td >
-			4
-		</td>
-		<td >
-			Sistema
-			di riferimento spaziale
-		</td>
-		<td >
-			</td>
-	</tr>
-	<tr>
-		<th colspan="3"  >
-			Servizi
-			di dati territoriali armonizzati
-		</th>
-	</tr>
-	<tr>
-		<td >
-			5
-		</td>
-		<td >
-			Metadati
-			di richiamata
-		</td>
-		<td ></td>
-	</tr>
-</table>
-</section>	
-</section>
-<section id="new-ds-md">
-	<h4>Metadati per le nuove acquisizioni di dati territoriali</h4>
-	<p>In questo paragrafo sono definiti i metadati che POSSONO essere utilizzati nel caso in cui una Amministrazione scelga di descrivere nel Repertorio i dati territoriali che prevede di acquisire.</p>
-<p>Nel “Dizionario dei metadati relativi alle nuove acquisizioni di dati” (paragrafo 4.2.6), per ogni metadato, è specificata la definizione, il tipo, il dominio, il livello di obbligatorietà e la molteplicità.</p>
-<table class="simple">
-    <tr>
-        <th colspan="4">Informazioni sui metadati</th>
-    </tr>
-    <tr>
-        <td >1</td>
-        <td>Identificatore del file</td>
-        <td colspan="2"></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Lingua dei metadati</td>
-        <td colspan="2"></td>
-    </tr>
-    <tr>
-        <td rowspan="5">3</td>
-        <td rowspan="5">Responsabile dei metadati</td>
-        <td colspan="2">3.1 - Nome dell&rsquo;Ente</td>
-    </tr>
-    <tr>
-        <td colspan="2">3.2 &ndash; Ruolo</td>
-    </tr>
-    <tr>
-        <td rowspan="3">3.3 - Informazioni per contattare l&rsquo;Ente</td>
-        <td >3.3.1 - Sito web</td>
-    </tr>
-    <tr>
-        <td >3.3.2 - Telefono</td>
-    </tr>
-    <tr>
-        <td >3.3.3 - E-mail</td>
-    </tr>
-    <tr>
-        <td >4</td>
-        <td >Data dei metadati</td>
-        <td colspan="2" ></td>
-    </tr>
-    <tr>
-        <th colspan="4" >Identificazione dei dati</th>
-    </tr>
-    <tr>
-        <td >5</td>
-        <td >Titolo</td>
-        <td colspan="2"></td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td>Data di presunta disponibilit&agrave;</td>
-        <td colspan="2" ></td>
-    </tr>
-    <tr>
-        <td >7</td>
-        <td >Formato di presentazione</td>
-        <td colspan="2"></td>
-    </tr>
-    <tr>
-        <td rowspan="5" >8</td>
-        <td rowspan="5" >Responsabile</td>
-        <td colspan="2" >8.1 - Nome dell&rsquo;Ente</td>
-    </tr>
-    <tr>
-        <td colspan="2" >8.2 &ndash; Ruolo</td>
-    </tr>
-    <tr>
-        <td rowspan="3" >8.3 - Informazioni per contattare l&rsquo;Ente</td>
-        <td >8.3.1 - Sito web</td>
-    </tr>
-    <tr>
-        <td >
-            8.3.2
-            - Telefono
-        </td>
-    </tr>
-    <tr>
-        <td >
-            8.3.3
-            - E-mail
-        </td>
-    </tr>
-    <tr>
-        <td >
-            9
-        </td>
-        <td >
-            Identificatore
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td >
-            10
-        </td>
-        <td >
-            Altri
-            dettagli
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td >
-            11
-        </td>
-        <td >
-            Descrizione
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td >
-            12
-        </td>
-        <td >
-            Status
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td >
-            13
-        </td>
-        <td >
-            Tipo
-            di rappresentazione spaziale
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td >
-            14
-        </td>
-        <td >
-            Risoluzione
-            spaziale: Scala equivalente
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td >
-            15
-        </td>
-        <td >
-            Categoria
-            tematica
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td rowspan="4" >
-            16
-        </td>
-        <td rowspan="4" >
-            Localizzazione
-            geografica
-        </td>
-        <td colspan="2" >
-            16.1
-            - Longitudine Ovest
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" >
-            16.2
-            - Longitudine Est
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" >
-            16.3
-            - Latitudine Sud
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" >
-            16.4
-            - Latitudine Nord
-        </td>
-    </tr>
-    <tr>
-        <td >
-            17
-        </td>
-        <td >
-            Limite
-            amministrativo
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td >
-            18
-        </td>
-        <td >
-            Informazioni
-            supplementari
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td colspan="4" >
-            Vincoli
-            sui dati
-        </td>
-    </tr>
-    <tr>
-        <td >
-            19
-        </td>
-        <td >
-            Limitazione
-            d&rsquo;uso
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-    <tr>
-        <td colspan="4" >
-            Sistema
-            di riferimento
-        </td>
-    </tr>
-    <tr>
-        <td >
-            20
-        </td>
-        <td>
-            Sistema
-            di riferimento spaziale
-        </td>
-        <td colspan="2" >
-        </td>
-    </tr>
-</table>
-</section>
-			  
-		  </section>
 	  </section>
 	  
    <section id="gdl">
