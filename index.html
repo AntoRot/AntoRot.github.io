@@ -12108,9 +12108,63 @@ o	servizi di dati territoriali armonizzato.</p>
 </section>
 
 	  </section>
+ <section id="rndt-access">
+    <h3>Accesso, modalità di comunicazione e alimentazione del Repertorio</h3>
+	 <section id="access-consult">
+		 <h4>Accesso e consultazione del Repertorio</h4>
+		 <p>La consultazione del Repertorio avviene tramite l’accesso al portale https://geodati.gov.it.</p>
+<p>Le informazioni, in termini di metadati, relative ai dati territoriali e ai servizi di cui sono titolari le Pubbliche Amministrazioni sono liberamente consultabili sul Repertorio, anche da parte dei privati, come previsto al paragrafo 3.6 delle presenti linee guida, attraverso le funzionalità di ricerca disponibili nel predetto portale.</p>
+<p>La consultazione può avvenire anche attraverso le operazioni e le interrogazioni possibili con il servizio di catalogo CSW e il servizio REST che il Repertorio rende disponibili.</p> 
+</section>
+	 <section id="accred">
+		 <h4>Accreditamento delle Amministrazioni Pubbliche</h4>
+		 <p>Per essere abilitate alla alimentazione del Repertorio e per accedere all’area riservata del portale, le amministrazioni DEVONO preventivamente accreditarsi all’Indice dei domicili digitali delle pubbliche amministrazioni e dei gestori di pubblici servizi (IPA)  secondo le regole definite in [LG_IPAGPS].</p>
+<p>Una volta presenti in IPA, le amministrazioni possono avviare la procedura di accreditamento al Repertorio secondo le indicazioni fornite nelle relative guide operative, pubblicate sul sito innanzi indicato.</p>
+<p>L’accreditamento al Repertorio consente alle amministrazioni di accedere all’area riservata per l’utilizzo dei servizi e delle funzionalità ivi disponibili.</p>
+	 </section>
+	 <section id="feed">
+		 <h4>Alimentazione del Repertorio</h4>
+		 <section id="xml-schema">
+		 <h5>XML e schemi XSD</h5>
+			 <p>L’alimentazione e l’aggiornamento del Repertorio utilizzano il formato XML.</p>
+<p>Le regole di codifica XML utilizzate fanno riferimento allo Standard [ISO TS 19139] e alle Specifiche [CSW2 AP ISO].</p>
+		 </section>
+		 <section id="submit">
+		 <h5>Trasmissione dei file XML</h5>
+			 <p>La trasmissione, al Repertorio, dei file XML, contenenti i metadati relativi ai dati territoriali e ai servizi, prodotti dalle Pubbliche Amministrazioni in conformità agli schemi XSD di cui al paragrafo precedente e alle regole del presente documento, avviene attraverso i servizi di catalogo basati sullo standard CSW definito da OGC.</p>
+<p>Le Amministrazioni Pubbliche che non dispongono di propri servizi di catalogo POSSONO avvalersi delle funzioni di utility (editor, caricamento, validazione) rese disponibili dal Repertorio, per la compilazione e/o la trasmissione dei file. Tali funzionalità riguardano:
+	<ul>
+<li>editor, strumento per l’acquisizione e l’aggiornamento dei metadati attraverso la compilazione di “form” guidate e conformi al modello di metadati del Repertorio. L’editor crea automaticamente un file XML conforme agli schemi XSD di cui al paragrafo 4.3.3.1;</li>
+<li>validazione, funzione che verifica la conformità dei file XML agli schemi XSD e alle regole del Repertorio definite dalle presenti linee guida e dalle relative guide operative;</li>
+<li>caricamento, funzione che permette di trasmettere all’Agenzia per l’Italia Digitale, per la successiva pubblicazione nel Repertorio, i file XML di metadati, previa verifica di conformità agli schemi XSD e alle indicazioni contenute in questo documento e nelle guide operative. Il caricamento dei file XML può avvenire anche previa registrazione di una cartella contenente i file, disponibile sul web, che viene assimilata a un servizio di catalogo.</li>
+			 </ul>
+		</p>
+
+		 </section>
+	<section id="md-operations">
+		 <h5>Operazioni sui metadati</h5>
+		<p>Le operazioni possibili per i metadati sono le seguenti:
+			<ul>
+<li><strong>inserimento</strong>: si chiede di inserire nel Repertorio, per la prima volta, un set di metadati, strutturato secondo quanto riportato nel presente allegato, che descrive una certa risorsa informativa;</li>
+<li><strong>aggiornamento</strong>: si chiede di effettuare una modifica/aggiornamento di un set di metadati, relativo ad uno o più determinati livelli gerarchici di una risorsa, già pubblicato nel Repertorio;</li>
+<li><strong>cancellazione</strong>: si chiede la rimozione di un set di metadati, relativo ad uno o più determinati livelli gerarchici di una risorsa, già pubblicato nel Repertorio.</li>
+		</ul>
+				</p>
+
+	 </section>
+	 </section>
+<section id="insp-integration">
+    <h4>Integrazione del Repertorio con INSPIRE</h4>
+	<p>Il Repertorio, in quanto punto di accesso nazionale per i metadati, provvede a rendere disponibili i metadati al geoportale INSPIRE secondo le modalità individuate per l’applicazione della direttiva INSPIRE.</p>
+<p>La raccolta dei dati del Repertorio da parte del geoportale INSPIRE PUÒ avvenire attraverso l’impostazione di uno specifico filtro per poter selezionare ed esporre nel predetto geoportale solo i dati e i servizi prodotti ai fini INSPIRE.</p>
+<p>L’amministrazione titolare DEVE indicare se la risorsa documentata è di interesse o meno per la direttiva INSPIRE, seguendo le indicazioni fornite nelle guide operative.</p>
+<p>L’amministrazione titolare DEVE indicare l’ambito di applicazione (tra locale, regionale, nazionale o INSPIRE) della risorsa documentata, sempre secondo le indicazioni fornite nelle guide operative.</p>
+</section>
+</section>
+
 	  
    <section id="gdl">
-    <h2>Gruppo di lavoro</h2>
+    <h3>Gruppo di lavoro</h3>
       <p>
         La redazione del documento è stata curata dalla Sezione Tecnica 2 - Metadati istituita nell’ambito della Consulta Nazionale per l’Informazione Territoriale ed Ambientale ai sensi dell’art. 3 del DPCM 12 gennaio 2016 recante “Modalità di funzionamento della Consulta nazionale per l’informazione territoriale ed ambientale, ai sensi dell’articolo 11, comma 5, del decreto legislativo 27 gennaio 2010, n. 32” (G.U. n. 72 – Serie generale del 26 marzo 2016). 
 </p>
