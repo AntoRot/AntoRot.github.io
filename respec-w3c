@@ -311,7 +311,7 @@ window.respecVersion="26.0.0",function(){"use strict";window.addEventListener("e
               `}
         </p>`}
     <hr title="Separator for header" />
-  </div>`};const Jo=wn({en:{sotd:"Status of This Document"},ko:{sotd:"현재 문서의 상태"},zh:{sotd:"关于本文档"},ja:{sotd:"この文書の位置付け"},nl:{sotd:"Status van dit document"},es:{sotd:"Estado de este Document"},de:{sotd:"Status dieses Dokuments"}});var Xo=(e,t)=>nn`
+  </div>`};const Jo=wn({en:{sotd:"Status of This Document"},ko:{sotd:"현재 문서의 상태"},zh:{sotd:"关于本文档"},ja:{sotd:"この文書の位置付け"},nl:{sotd:"Status van dit document"},es:{sotd:"Estado de este Document"},de:{sotd:"Status dieses Dokuments"}, it:{sotd:"Stato di questo documento"}});var Xo=(e,t)=>nn`
     <h2>${Jo.sotd}</h2>
     ${e.isPreview?Qo(e):""}
     ${e.isUnofficial?function(e){const{additionalContent:t}=e;return nn`
