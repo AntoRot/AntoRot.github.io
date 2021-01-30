@@ -70,6 +70,45 @@
         var i, c = ["nunjucks", "handlebars", "mustache"];
         (i = window.respecConfig).preProcess || (i.preProcess = []), i.preProcess.push((async function(n, r) {
                 await
+                function(e, n) {
+                    const o = document.querySelector("link[rel='manifest']");
+                    if (!o && e.noPackage) return Promise.resolve({});
+                    const r = o && o.href ? o.href : "package.json";
+                    return fetch(new URL(r, n.location)).then((e => e.ok ? e.json() : Promise.resolve({}))).catch((e => {})).then((e => (Object.assign(t, e), e)))
+                }(n, r),
+                function(e, n) {
+                    if (!n.title && t.name && (n.title = t.name), !e.subtitle && t.description && (e.subtitle = t.description), e.shortName || (e.shortName = t.short_name || t.name), t.homepage && !e.canonicalURI && (e.canonicalURI = t.homepage), t.bugs || t.repository && t.repository.url) {
+                        const n = {
+                            key: "Links",
+                            data: []
+                        };
+                        t.repository && t.repository.url && n.data.push({
+                            value: "Repository",
+                            href: t.repository.url
+                        }), t.bugs && n.data.push({
+                            value: "Issues",
+                            href: t.bugs.url || t.bugs
+                        }), void 0 === e.otherLinks && (e.otherLinks = []), e.otherLinks.push(n)
+                    }
+                }(n, r),
+                function(e, t) {
+                    const n = t.querySelector("link[rel='icon'][sizes='any']");
+                    if (!e.logos && n) {
+                        let o = new URL(n.href),
+                            r = o.origin == t.location.origin ? o.pathname : n.href;
+                        e.logos = [{
+                            alt: "Logo",
+                            id: "logo",
+                            width: 128,
+                            height: 128,
+                            src: r
+                        }]
+                    }
+                }(n, r),
+                function(e, n) {
+                    if (!e.authors && t.author && (e.authors = [o(t.author)]), !e.editors && (e.editors = [], e.authors && e.editors.push(...e.authors), t.contributors))
+                        for (const n of t.contributors) e.editors.push(o(n))
+                }(n),
                 function(t, n) {
                     const o = n.createElement("style");
                     o.textContent = e.Z, n.body.appendChild(o)
