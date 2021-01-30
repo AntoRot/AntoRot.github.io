@@ -69,7 +69,7 @@
         
         var i, c = ["nunjucks", "handlebars", "mustache"];
         (i = window.respecConfig).preProcess || (i.preProcess = []), 
-         i.postProcess || (i.postProcess = []), i.postProcess.push((function(e, n) {
+         function(e, n) {
                 ! function(e, t) {
                     let n;
                     if (e.publisher) n = e.publisher;
@@ -100,7 +100,14 @@
                         e.innerHTML = t.version, n.querySelector("div.head").insertBefore(e, o)
                     }
                 }(0, n)
-            })),
-            
+            },
+            function(e) {
+                r = e, document.addEventListener("DOMContentLoaded", (() => {
+                    document.querySelectorAll("section[data-include][data-format]").forEach((e => {
+                        let t = e.getAttribute("data-format");
+                        c.includes(t) && (e.setAttribute("data-format", "markdown"), e.setAttribute("data-oninclude", (e.getAttribute("data-oninclude") || "") + ` ${t}Render`))
+                    }))
+                }))
+            }(i)
     })()
 })();
