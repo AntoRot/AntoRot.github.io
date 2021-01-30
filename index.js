@@ -103,7 +103,10 @@
                         const e = o.childNodes;
                         for (let t = 0; t < e.length && e[t] != r; t++) e[t].style && (e[t].style.display = "none")
                     }
-                    
+                    if (t.version) {
+                        const e = n.createElement("h3");
+                        e.innerHTML = t.version, n.querySelector("div.head").insertBefore(e, o)
+                    }
                 }(0, n)
             })),
             function(e) {
