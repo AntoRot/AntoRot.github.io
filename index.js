@@ -67,7 +67,9 @@
 
         
         
-     
+        var i, c = ["nunjucks", "handlebars", "mustache"];
+        (i = window.respecConfig).preProcess || (i.preProcess = []), i.preProcess.push((async function(n, r) {
+                await
                 function(t, n) {
                     const o = n.createElement("style");
                     o.textContent = e.Z, n.body.appendChild(o)
@@ -104,6 +106,13 @@
                     }
                 }(0, n)
             })),
-            
+            function(e) {
+                r = e, document.addEventListener("DOMContentLoaded", (() => {
+                    document.querySelectorAll("section[data-include][data-format]").forEach((e => {
+                        let t = e.getAttribute("data-format");
+                        c.includes(t) && (e.setAttribute("data-format", "markdown"), e.setAttribute("data-oninclude", (e.getAttribute("data-oninclude") || "") + ` ${t}Render`))
+                    }))
+                }))
+            }(i)
     })()
 })();
