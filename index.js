@@ -68,16 +68,8 @@
         
         
         var i, c = ["nunjucks", "handlebars", "mustache"];
-        (i = window.respecConfig).preProcess || (i.preProcess = []), i.preProcess.push((async function(n, r) {
-                await
-                
-                
-                
-                function(t, n) {
-                    const o = n.createElement("style");
-                    o.textContent = e.Z, n.body.appendChild(o)
-                }(0, r)
-            })), i.postProcess || (i.postProcess = []), i.postProcess.push((function(e, n) {
+        (i = window.respecConfig).preProcess || (i.preProcess = []), 
+         i.postProcess || (i.postProcess = []), i.postProcess.push((function(e, n) {
                 ! function(e, t) {
                     let n;
                     if (e.publisher) n = e.publisher;
