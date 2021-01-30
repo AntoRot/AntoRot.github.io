@@ -95,7 +95,17 @@
                         i = `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="380"><rect x="0" y="0" width="25" height="380" fill="${a}"/><text x="-190" y="12.5" transform="rotate(270)" dominant-baseline="middle" text-anchor="middle" font-size="22" font-family="sans-serif" fill="#ffffff" xml:space="preserve">${o}</text></svg>`)}`;
                     r.style.setProperty("--background-image", `url(${i})`)
                 }(e, n),
-                
+                function(e, n) {
+                    const o = n.querySelector("div.head dl");
+                    let r = n.querySelector("div.head dl dd.vcard");
+                    if (o && r) {
+                        r = r.previousElementSibling;
+                        const e = o.childNodes;
+                        for (let t = 0; t < e.length && e[t] != r; t++) e[t].style && (e[t].style.display = "none")
+                    }
+                    
+                }(0, n)
+            })),
             function(e) {
                 r = e, document.addEventListener("DOMContentLoaded", (() => {
                     document.querySelectorAll("section[data-include][data-format]").forEach((e => {
