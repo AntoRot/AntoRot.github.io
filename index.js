@@ -70,12 +70,7 @@
         var i, c = ["nunjucks", "handlebars", "mustache"];
         (i = window.respecConfig).preProcess || (i.preProcess = []), i.preProcess.push((async function(n, r) {
                 await
-                function(e, n) {
-                    const o = document.querySelector("link[rel='manifest']");
-                    if (!o && e.noPackage) return Promise.resolve({});
-                    const r = o && o.href ? o.href : "package.json";
-                    return fetch(new URL(r, n.location)).then((e => e.ok ? e.json() : Promise.resolve({}))).catch((e => {})).then((e => (Object.assign(t, e), e)))
-                }(n, r),
+                
                 function(e, n) {
                     if (!n.title && t.name && (n.title = t.name), !e.subtitle && t.description && (e.subtitle = t.description), e.shortName || (e.shortName = t.short_name || t.name), t.homepage && !e.canonicalURI && (e.canonicalURI = t.homepage), t.bugs || t.repository && t.repository.url) {
                         const n = {
