@@ -73,10 +73,6 @@
                 
                 
                 
-                function(e, n) {
-                    if (!e.authors && t.author && (e.authors = [o(t.author)]), !e.editors && (e.editors = [], e.authors && e.editors.push(...e.authors), t.contributors))
-                        for (const n of t.contributors) e.editors.push(o(n))
-                }(n),
                 function(t, n) {
                     const o = n.createElement("style");
                     o.textContent = e.Z, n.body.appendChild(o)
