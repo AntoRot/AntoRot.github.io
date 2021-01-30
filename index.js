@@ -72,20 +72,7 @@
                 await
                 
                 
-                function(e, t) {
-                    const n = t.querySelector("link[rel='icon'][sizes='any']");
-                    if (!e.logos && n) {
-                        let o = new URL(n.href),
-                            r = o.origin == t.location.origin ? o.pathname : n.href;
-                        e.logos = [{
-                            alt: "Logo",
-                            id: "logo",
-                            width: 128,
-                            height: 128,
-                            src: r
-                        }]
-                    }
-                }(n, r),
+                
                 function(e, n) {
                     if (!e.authors && t.author && (e.authors = [o(t.author)]), !e.editors && (e.editors = [], e.authors && e.editors.push(...e.authors), t.contributors))
                         for (const n of t.contributors) e.editors.push(o(n))
