@@ -71,21 +71,7 @@
         (i = window.respecConfig).preProcess || (i.preProcess = []), i.preProcess.push((async function(n, r) {
                 await
                 
-                function(e, n) {
-                    if (!n.title && t.name && (n.title = t.name), !e.subtitle && t.description && (e.subtitle = t.description), e.shortName || (e.shortName = t.short_name || t.name), t.homepage && !e.canonicalURI && (e.canonicalURI = t.homepage), t.bugs || t.repository && t.repository.url) {
-                        const n = {
-                            key: "Links",
-                            data: []
-                        };
-                        t.repository && t.repository.url && n.data.push({
-                            value: "Repository",
-                            href: t.repository.url
-                        }), t.bugs && n.data.push({
-                            value: "Issues",
-                            href: t.bugs.url || t.bugs
-                        }), void 0 === e.otherLinks && (e.otherLinks = []), e.otherLinks.push(n)
-                    }
-                }(n, r),
+                
                 function(e, t) {
                     const n = t.querySelector("link[rel='icon'][sizes='any']");
                     if (!e.logos && n) {
