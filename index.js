@@ -62,5 +62,48 @@
         var e = n(589);
         const t = {};
 
+        
+        var r = {};
+
+        
+        
+     
+                function(t, n) {
+                    const o = n.createElement("style");
+                    o.textContent = e.Z, n.body.appendChild(o)
+                }(0, r)
+            })), i.postProcess || (i.postProcess = []), i.postProcess.push((function(e, n) {
+                ! function(e, t) {
+                    let n;
+                    if (e.publisher) n = e.publisher;
+                    else {
+                        n = e.shortName;
+                        for (const t of [...e.authors, ...e.editors])
+                            if (t.company) {
+                                n = t.company;
+                                break
+                            }
+                    }
+                    const o = n + "  " + e.longStatus,
+                        r = t.querySelector(":root"),
+                        a = getComputedStyle(r).getPropertyValue("--actual-accent-color"),
+                        i = `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="380"><rect x="0" y="0" width="25" height="380" fill="${a}"/><text x="-190" y="12.5" transform="rotate(270)" dominant-baseline="middle" text-anchor="middle" font-size="22" font-family="sans-serif" fill="#ffffff" xml:space="preserve">${o}</text></svg>`)}`;
+                    r.style.setProperty("--background-image", `url(${i})`)
+                }(e, n),
+                function(e, n) {
+                    const o = n.querySelector("div.head dl");
+                    let r = n.querySelector("div.head dl dd.vcard");
+                    if (o && r) {
+                        r = r.previousElementSibling;
+                        const e = o.childNodes;
+                        for (let t = 0; t < e.length && e[t] != r; t++) e[t].style && (e[t].style.display = "none")
+                    }
+                    if (t.version) {
+                        const e = n.createElement("h3");
+                        e.innerHTML = t.version, n.querySelector("div.head").insertBefore(e, o)
+                    }
+                }(0, n)
+            })),
+            
     })()
 })();
