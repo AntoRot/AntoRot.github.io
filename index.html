@@ -19,6 +19,10 @@
         tocIntroductory: true,
         shortName: "rndt-lg",
 	license: "cc-by",
+	lint: {
+          "no-http-props": false,
+          "check-punctuation": true,
+        },
 	preProcess: [addSectionIds, fixIncludes],
         postProcess: [
           fixLinks,
