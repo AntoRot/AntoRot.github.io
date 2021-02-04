@@ -10,16 +10,23 @@
         specStatus: "REC",
 	publisher: "AgID",
         previousPublishDate: null,
-        previousMaturity: "LC",
         lcEnd: "2021-02-15",
 	thisVersionURI: "https://antorot.github.io",
 	latestVersionURI: "https://antorot.github.io",
-	edDraftURI: "",
-	prevVersionURI: "",
+	edDraftURI: null,
+	prevVersionURI: null,
 	prevRecURI: "https://www.gazzettaufficiale.it/eli/id/2012/02/27/12A01801/sg",
         tocIntroductory: true,
         shortName: "rndt-lg",
 	license: "cc-by",
+	preProcess: [addSectionIds, fixIncludes],
+        postProcess: [
+          fixLinks,
+          addWikiLinks,
+          fixMarkupPostprocess,
+          postProcessEnhance,
+          cleanup,
+        ],
 	logos: [
     {
       src: "../agid-logo3.png",
@@ -130,7 +137,7 @@
      }
       };
     </script>
-    <script src="https://unpkg.com/respec-themeable" class="remove"></script>
+    <!--<script src="https://unpkg.com/respec-themeable" class="remove"></script>-->
 <style id="respec-mainstyle">
 @keyframes pop{
 0%{transform:scale(1,1)}
