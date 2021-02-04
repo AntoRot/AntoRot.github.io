@@ -19,18 +19,6 @@
         tocIntroductory: true,
         shortName: "rndt-lg",
 	license: "cc-by",
-	lint: {
-          "no-http-props": false,
-          "check-punctuation": true,
-        },
-	preProcess: [addSectionIds, fixIncludes],
-        postProcess: [
-          fixLinks,
-          addWikiLinks,
-          fixMarkupPostprocess,
-          postProcessEnhance,
-          cleanup,
-        ],
 	logos: [
     {
       src: "../agid-logo3.png",
@@ -141,7 +129,7 @@
      }
       };
     </script>
-    <!--<script src="https://unpkg.com/respec-themeable" class="remove"></script>-->
+    <script src="https://unpkg.com/respec-themeable" class="remove"></script>
 <style id="respec-mainstyle">
 @keyframes pop{
 0%{transform:scale(1,1)}
