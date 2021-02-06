@@ -104,6 +104,20 @@
       "date": "20 Ottobre 2009",
       "id": "inspire-ns-reg"
      },
+     "INSPIRE-SDS": {
+      "href": "https://inspire.ec.europa.eu/id/document/tg/sds",
+      "title": "Technical Guidance for INSPIRE Spatial Data Services and services allowing spatial data services to be invoked",
+      "publisher": "INSPIRE MIG",
+      "date": "2016",
+      "id": "inspire-sds"
+     },
+     "INSPIRE-MR-DEC": {
+      "href": "http://data.europa.eu/eli/dec/2009/442/oj",
+      "title": "Decisione della Commissione, del 5 giugno 2009 , recante attuazione della direttiva 2007/2/CE del Parlamento europeo e del Consiglio per quanto riguarda il monitoraggio e la rendicontazione",
+      "publisher": "OJ L 148",
+      "date": "11 Giugno 2019",
+      "id": "inspire-mr-dec"
+     },
      "ISO-19119": {
       "href": "https://www.iso.org/standard/59221.html",
       "title": "Geographic information -- Services",
@@ -274,7 +288,7 @@ Regole tecniche per la definizione del contenuto del [=Repertorio=] nazionale de
     </section>
     <section>
       <h2>Ambito di applicazione</h2>
-     <p> Le presenti Linee Guida stabiliscono le regole tecniche per la definizione e l’aggiornamento del contenuto del [=Repertorio=] nazionale dei dati territoriali, in ottemperanza al comma 5 art. 59 del [[CAD]]. Esse definiscono, inoltre, le modalità operative di accesso, comunicazione e popolamento del [=Repertorio=] da parte delle Pubbliche Amministrazioni, in coerenza con la direttiva 2007/2/CE [[INSPIRE-DIR]] e relativa norma di recepimento (D. Lgs. 32/2010), e con il Regolamento (CE) n. 1205/2008 della Commissione Europea del 3 dicembre 2008 e s.m.i. [[INSPIRE-MD-REG]].
+     <p> Le presenti Linee Guida stabiliscono le regole tecniche per la definizione e l’aggiornamento del contenuto del [=Repertorio=] nazionale dei dati territoriali, in ottemperanza al comma 5 art. 59 del [[CAD]]. Esse definiscono, inoltre, le modalità operative di accesso, comunicazione e popolamento del [=Repertorio=] da parte delle Pubbliche Amministrazioni, in coerenza con la direttiva 2007/2/CE [[INSPIRE-DIR]] e relativa norma di recepimento ([[D-LGS-32-2010]]), e con il Regolamento (CE) n. 1205/2008 della Commissione Europea del 3 dicembre 2008 e s.m.i. [[INSPIRE-MD-REG]].
 </p><p>Il contenuto del [=Repertorio=] è rappresentato dai [=metadati=] di dati e servizi territoriali che DEVONO essere forniti al [=Repertorio=] secondo quanto indicato nel Capitolo 4. 
 </p><p>POSSONO essere definite estensioni ai set di [=metadati=] indicati nel presente documento assicurando però il rispetto delle regole di cui all’Allegato C dello Standard [[ISO-19115]].
 </p><p>I [=metadati=] DEVONO essere applicati alle seguenti classi di informazioni territoriali:
@@ -293,21 +307,21 @@ Regole tecniche per la definizione del contenuto del [=Repertorio=] nazionale de
       
    <p>Relativamente ai servizi, in ambito INSPIRE sono individuate le seguenti tipologie di servizi di dati territoriali:
 	   <ul>
-<li>servizi di rete di cui all’art. 11 della [=direttiva INSPIRE=], che rientrano nel campo di applicazione del regolamento [CE 976/2009];</li>
-<li>servizi di dati territoriali che rientrano nel campo di applicazione del regolamento [UE 1089/2010] che sono suddivisi nelle seguenti categorie:
+<li>servizi di rete di cui all’art. 11 della [=direttiva INSPIRE=]([[INSPIRE-DIR]]), che rientrano nel campo di applicazione del Regolamento [[INSPIRE-NS-REG]];</li>
+<li>servizi di dati territoriali che rientrano nel campo di applicazione del Regolamento [[INSPIRE-SDSS-REG]] che sono suddivisi nelle seguenti categorie:
 		   <ul>
-<li>servizi di dati territoriali invocabili;</li>
-<li>servizi di dati territoriali interoperabili;</li>
-<li>servizi di dati territoriali armonizzato.</li>
+<li>[=servizi di dati territoriali invocabili=];</li>
+<li>[=servizi di dati territoriali interoperabili=];</li>
+<li>[=servizi di dati territoriali armonizzati=].</li>
 		   </ul></li>
 	  </ul>
 		   </p>
-<p>Nella figura che segue, tratta dalla Guida tecnica per i servizi di dati territoriali [1], sono rappresentate le diverse tipologie e categorie di servizi.</p>
+<p>Nella figura che segue, tratta dalla Guida tecnica per i servizi di dati territoriali [[INSPIRE-SDS]], sono rappresentate le diverse tipologie e categorie di servizi.</p>
       <figure id="inspireServices">
     <img src="inspire-services.png" alt="INSPIRE services" />
     <figcaption>Tipologie e categorie di servizi nel contesto INSPIRE</figcaption>
   </figure>
-<p>Maggiori approfondimenti su detti servizi sono rinvenibili nella guida tecnica INSPIRE citata innanzi.</p>
+<p>Maggiori approfondimenti su detti servizi sono rinvenibili nella guida tecnica [[INSPIRE-SDS]] citata innanzi.</p>
      
     </section>
    <section>
@@ -315,26 +329,26 @@ Regole tecniche per la definizione del contenuto del [=Repertorio=] nazionale de
 	   <section>
         <h3>Termini e definizioni</h3>
       <p>
-        Ai fini del presente documento, oltre alle definizioni pertinenti di cui all’art. 1 del [D.Lgs. 82/2005], si applicano le seguenti definizioni:
+        Ai fini del presente documento, oltre alle definizioni pertinenti di cui all’art. 1 del [[CAD]], si applicano le seguenti definizioni:
 </p>
 		   <p><strong><dfn>amministrazione titolare dei dati</dfn></strong>: la pubblica amministrazione, di cui all’articolo 1, comma 2, del decreto legislativo n. 165 del 2001, che produce e detiene il dato originale, ovvero la versione di riferimento da cui derivano eventuali copie e che ne può disporre liberamente;</p>
            <p><strong><dfn>classe</dfn></strong>: insieme di oggetti simili dotati di proprietà comuni;</p>
 	   <p><strong><dfn>dataset</dfn></strong>: collezione identificabile di dati;</p>
 	   <p><strong><dfn>dati territoriali di interesse generale</dfn></strong>: i dati territoriali individuati come dati di interesse generale per le finalità di pubblicazione nel [=Repertorio=], previste dell’articolo 59, comma 3, del decreto legislativo 7 marzo 2005, n. 82 e riportati nell’allegato 1, che costituisce parte integrante del presente documento;</p>
-	   <p><strong><dfn>direttiva INSPIRE</dfn></strong>: la direttiva 2007/2/CE del Parlamento europeo e del Consiglio del 14 marzo 2007, che istituisce un’infrastruttura per l’informazione territoriale nella Comunità europea, recepita in Italia con il decreto legislativo 27 gennaio 2010, n. 32;</p>
+	   <p><strong><dfn>direttiva INSPIRE</dfn></strong>: la direttiva 2007/2/CE del Parlamento europeo e del Consiglio del 14 marzo 2007 [[INSPIRE-DIR]], che istituisce un’infrastruttura per l’informazione territoriale nella Comunità europea, recepita in Italia con il decreto legislativo 27 gennaio 2010, n. 32 [[D-LGS-32-2010]];</p>
            <p><strong><dfn>dizionario dei dati</dfn></strong>: [=enumerazione=] informale in linguaggio corrente delle descrizioni degli oggetti;</p>
 	   <p><strong><dfn>elenco di codici</dfn></strong>: elenco non bloccato di valori. Può essere considerata una [=enumerazione=] flessibile;</p>
 	   <p><strong><dfn>enumerazione</dfn></strong>: elenco bloccato di valori;</p>
 	   <p><strong><dfn>metadati</dfn></strong>: informazioni che descrivono i dati territoriali e i servizi ad essi relativi e che consentono di registrare, ricercare e utilizzare tali dati e servizi;</p>
 	   <p><strong><dfn>Repertorio</dfn></strong>: il [=Repertorio=] nazionale dei dati territoriali istituito presso l’Agenzia per l’Italia Digitale, ai sensi dell’articolo 59, comma 3, del decreto legislativo 7 marzo 2005, n. 82, raggiungibile al dominio https://geodati.gov.it;</p>
 	   <p><strong><dfn>schema</dfn></strong>: descrizione di un modello attraverso un linguaggio formale;</p>
-	   <p><strong><dfn>schema XML</dfn></strong>: modalità per definire la struttura, il contenuto e la semantica dei documenti XML [ISO 19139];</p>
+	   <p><strong><dfn>schema XML</dfn></strong>: modalità per definire la struttura, il contenuto e la semantica dei documenti XML [[ISO-19139]];</p>
 	   <p><strong><dfn>serie di dataset</dfn></strong>: collezione di [=dataset=] che condividono le stesse specifiche di prodotto;</p>
 	   <p><strong><dfn>servizi di ricerca</dfn></strong>: servizi che consentono di cercare i set di dati territoriali e i servizi ad essi relativi in base al contenuto dei [=metadati=] corrispondenti e di visualizzare il contenuto dei [=metadati=];</p>
 	   <p><strong><dfn>servizi relativi ai dati territoriali</dfn></strong>: le operazioni che possono essere eseguite, con un’applicazione informatica, sui dati territoriali o sui [=metadati=] connessi;</p>
-	   <p><strong><dfn>servizio di dati armonizzati</dfn></strong>: un servizio di dati territoriali interoperabile che soddisfa le prescrizioni di cui all’allegato VII del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014];</p>
-	   <p><strong><dfn>servizio di dati invocabili</dfn></strong>: un servizio di dati territoriali: a) i cui [=metadati=] soddisfano le prescrizioni del regolamento (CE) n. 1205/2008 della Commissione; b) di cui almeno un localizzatore della risorsa è un punto di accesso; c) che sia conforme ad un insieme di specifiche tecniche documentate e accessibili al pubblico che forniscono le informazioni necessarie per la sua esecuzione [Regolamento (UE) n. 1312/2014];</p>
-	   <p><strong><dfn>servizio di dati interoperabili</dfn></strong>: un servizio di dati territoriali richiamabili che soddisfa le prescrizioni di cui all’allegato VI del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014].</p>
+	   <p><strong><dfn>servizi di dati territoriali armonizzati</dfn></strong>: un servizio di dati territoriali interoperabile che soddisfa le prescrizioni di cui all’allegato VII del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014];</p>
+	   <p><strong><dfn>servizi di dati territoriali invocabili</dfn></strong>: un servizio di dati territoriali: a) i cui [=metadati=] soddisfano le prescrizioni del regolamento (CE) n. 1205/2008 della Commissione; b) di cui almeno un localizzatore della risorsa è un punto di accesso; c) che sia conforme ad un insieme di specifiche tecniche documentate e accessibili al pubblico che forniscono le informazioni necessarie per la sua esecuzione [Regolamento (UE) n. 1312/2014];</p>
+	   <p><strong><dfn>servizi di dati territoriali interoperabili</dfn></strong>: un servizio di dati territoriali richiamabili che soddisfa le prescrizioni di cui all’allegato VI del Regolamento (UE) n. 1089/2010 [Regolamento (UE) n. 1312/2014].</p>
 	  </section>
 	   <section>
         <h3>Acronimi</h3>
@@ -353,10 +367,10 @@ Regole tecniche per la definizione del contenuto del [=Repertorio=] nazionale de
 		  <h2>Principi generali</h2>
 		  <section>
 			<h3>Funzioni del [=Repertorio=]</h3>
-			  <p>Il [=Repertorio=] di cui all’articolo 59, comma 3, del [D.Lgs. 82/2005], costituisce il catalogo nazionale dei [=metadati=] riguardanti i dati territoriali ed i servizi ad essi relativi, disponibili presso le pubbliche amministrazioni.</p>
-<p>Il [=Repertorio=] eroga i [=servizi di ricerca=] di cui all’articolo 7, comma 1, lettera a) del [D.Lgs. 32/2010], e rappresenta il punto di accesso nazionale ai fini dell’alimentazione del geoportale di cui all’art. 15, comma 1 della [=direttiva INSPIRE=].</p>
-<p>I [=metadati=] resi disponibili attraverso il servizio di ricerca erogato dal [=Repertorio=] costituiscono la base informativa per il calcolo degli indicatori per il monitoraggio di cui alla Decisione 2009/442/CE della Commissione del 5 giugno 2009 recante attuazione della [=direttiva INSPIRE=] per quanto riguarda il monitoraggio e la rendicontazione.</p>
-<p>Il [=Repertorio=] costituisce parte integrante dell’infrastruttura nazionale per l’informazione territoriale e del monitoraggio ambientale di cui all’articolo 3, comma 1, del [D.Lgs. 32/2010], relativamente alla raccolta dei [=metadati=] per i dati territoriali ed i relativi servizi.</p>
+			  <p>Il [=Repertorio=] di cui all’articolo 59, comma 3, del [[CAD]], costituisce il catalogo nazionale dei [=metadati=] riguardanti i dati territoriali ed i servizi ad essi relativi, disponibili presso le pubbliche amministrazioni.</p>
+<p>Il [=Repertorio=] eroga i [=servizi di ricerca=] di cui all’articolo 7, comma 1, lettera a) del [[D-LGS-32-2010]], e rappresenta il punto di accesso nazionale ai fini dell’alimentazione del geoportale di cui all’art. 15, comma 1 della [=direttiva INSPIRE=].</p>
+<p>I [=metadati=] resi disponibili attraverso il servizio di ricerca erogato dal [=Repertorio=] costituiscono la base informativa per il calcolo degli indicatori per il monitoraggio di cui alla Decisione [[INSPIRE-MR-DEC]].</p>
+<p>Il [=Repertorio=] costituisce parte integrante dell’infrastruttura nazionale per l’informazione territoriale e del monitoraggio ambientale di cui all’articolo 3, comma 1, del [[D-LGS-32-2010]], relativamente alla raccolta dei [=metadati=] per i dati territoriali ed i relativi servizi.</p>
 
 		  </section>
 		  <section>
@@ -366,7 +380,7 @@ Regole tecniche per la definizione del contenuto del [=Repertorio=] nazionale de
 		  </section>
 		  <section>
 			<h3>Efficacia della pubblicazione nel [=Repertorio=]</h3>
-			  <p>La pubblicazione dei [=metadati=] nel [=Repertorio=] certifica l’esistenza del relativo dato e assicura il rispetto degli adempimenti e la conformità alla [=direttiva INSPIRE=], ai Regolamenti [CE 1205/2008] e [UE 1089/2010], relativamente ai [=metadati=] per l’interoperabilità (ex art. 13) e ai [=metadati=] per i servizi di dati territoriali di cui agli allegati V, VI e VII, della Commissione e al [D.Lgs. 32/2010].</p>
+			  <p>La pubblicazione dei [=metadati=] nel [=Repertorio=] certifica l’esistenza del relativo dato e assicura il rispetto degli adempimenti e la conformità alla [=direttiva INSPIRE=], ai Regolamenti [[INSPIRE-MD-REG]] e [[INSPIRE-SDSS-REG]], relativamente ai [=metadati=] per l’interoperabilità (ex art. 13) e ai [=metadati=] per i servizi di dati territoriali di cui agli allegati V, VI e VII, della Commissione e al [[D-LGS-32-2010]].</p>
 <p>L’[=amministrazione titolare dei dati=] territoriale resta responsabile della correttezza, della tenuta, della gestione e dell’aggiornamento dei dati medesimi. È altresì responsabile della correttezza e dell’aggiornamento dei relativi [=metadati=] pubblicati nel [=Repertorio=].</p>
 
 		  </section>
@@ -380,9 +394,9 @@ Regole tecniche per la definizione del contenuto del [=Repertorio=] nazionale de
 		  <section>
 			<h3>Gestione del [=Repertorio=]</h3>
 			  <p>L’Agenzia per l’Italia Digitale cura la progettazione, la realizzazione, lo sviluppo e la gestione organizzativa e tecnologica del [=Repertorio=] nell’ambito delle infrastrutture condivise nazionali SPC.</p>
-<p>Il servizio di ricerca erogato dal [=Repertorio=] è conforme ai requisiti e alle caratteristiche specifiche di cui all’allegato II del Regolamento [CE 976/2009].</p>
+<p>Il servizio di ricerca erogato dal [=Repertorio=] è conforme ai requisiti e alle caratteristiche specifiche di cui all’allegato II del Regolamento [[INSPIRE-NS-REG]].</p>
 <p>Per tutte le attività di realizzazione e gestione del [=Repertorio=], AgID può avvalersi di soggetti terzi.</p>
-<p>Agli oneri finanziari per la gestione del [=Repertorio=] si provvede ai sensi dell’articolo 59, comma 7, del [D.Lgs. 82/2005].</p> 
+<p>Agli oneri finanziari per la gestione del [=Repertorio=] si provvede ai sensi dell’articolo 59, comma 7, del [[D-LGS-32-2010]].</p> 
 		  </section>
 		  <section>
 			<h3>Accesso al [=Repertorio=]</h3>
